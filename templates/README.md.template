@@ -1,0 +1,181 @@
+# {{CHAPTER_TITLE}}
+
+## Chapter Goals
+
+- [ ] Goal 1 — *TODO: Fill in specific learning objectives*
+- [ ] Goal 2
+- [ ] Goal 3
+- [ ] Goal 4
+
+---
+
+## The Story
+
+> *TODO: Write a ~200 word narrative hook that motivates the concept.*
+
+---
+
+## Johari Window: Before
+
+Before diving in, take a moment to honestly assess where you are. Fill out your [Johari Window worksheet](johari.md).
+
+{% hint style="info" %}
+**Be honest!** The Johari Window only helps if you're truthful about what you know and don't know. There's no shame in "I have no idea" — that's where the best learning happens.
+{% endhint %}
+
+---
+
+## Discovery
+
+Before we explain anything, try these problems. Don't worry if you get stuck — that's the point!
+
+{% hint style="warning" %}
+**Try these BEFORE reading the explanation below.** Struggling with a problem teaches you more than reading the answer.
+{% endhint %}
+
+**Discovery Problem 1:** *TODO*
+
+**Discovery Problem 2:** *TODO*
+
+---
+
+## The Big Idea
+
+*TODO: Clear, formal explanation of the concept. Use diagrams, examples, and analogies.*
+
+---
+
+## Multiple Solutions Showcase
+
+One of the most powerful ways to learn is to see the **same problem solved multiple ways**. Each solution teaches you something different.
+
+### The Problem
+
+*TODO: State the problem clearly*
+
+### Solution 1: The Straightforward Approach
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+# TODO: Solution 1 in Python
+```
+{% endtab %}
+{% tab title="Java" %}
+```java
+// TODO: Solution 1 in Java
+```
+{% endtab %}
+{% tab title="C++" %}
+```cpp
+// TODO: Solution 1 in C++
+```
+{% endtab %}
+{% endtabs %}
+
+**Analysis:** *TODO: Time/space complexity, pros/cons*
+
+### Solution 2: A Better Way
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+# TODO: Solution 2 in Python
+```
+{% endtab %}
+{% tab title="Java" %}
+```java
+// TODO: Solution 2 in Java
+```
+{% endtab %}
+{% tab title="C++" %}
+```cpp
+// TODO: Solution 2 in C++
+```
+{% endtab %}
+{% endtabs %}
+
+**Analysis:** *TODO: Why is this better? What insight did we use?*
+
+### Solution 3: The Elegant Approach
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+# TODO: Solution 3 in Python
+```
+{% endtab %}
+{% tab title="Java" %}
+```java
+// TODO: Solution 3 in Java
+```
+{% endtab %}
+{% tab title="C++" %}
+```cpp
+// TODO: Solution 3 in C++
+```
+{% endtab %}
+{% endtabs %}
+
+**Analysis:** *TODO: The key insight that makes this optimal*
+
+> **Language Spotlight**
+>
+> | | Python | Java | C++ |
+> |---|--------|------|-----|
+> | *TODO* | | | |
+
+---
+
+## Gotchas
+
+{% hint style="danger" %}
+**Gotcha #1: TODO**
+
+*Explanation of the common mistake, with a code example showing the bug.*
+{% endhint %}
+
+{% hint style="danger" %}
+**Gotcha #2: TODO**
+
+*Another common mistake.*
+{% endhint %}
+
+---
+
+## Practice Problems
+
+Head to the `code/` directory and solve these problems. Run the tests to check your work!
+
+| # | Problem | Difficulty | File |
+|---|---------|-----------|------|
+| 1 | *TODO* | Warm-up | `warmup_01` |
+| 2 | *TODO* | Warm-up | `warmup_02` |
+| 3 | *TODO* | Practice | `practice_01` |
+| 4 | *TODO* | Practice | `practice_02` |
+| 5 | *TODO* | Challenge | `challenge_01` |
+
+```bash
+# Check your solutions
+./scripts/run_tests.sh chXX python
+./scripts/run_tests.sh chXX java
+./scripts/run_tests.sh chXX cpp
+```
+
+---
+
+## Language Idioms
+
+*TODO: Compare how each language handles this topic idiomatically.*
+
+---
+
+## Johari Window: After
+
+Now fill out the "After" section of your [Johari Window worksheet](johari.md). Compare it with your "Before" — what changed?
+
+---
+
+## What's Next
+
+*TODO: Brief preview of the next chapter and how it builds on this one.*

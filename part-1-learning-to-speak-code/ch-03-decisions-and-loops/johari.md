@@ -1,0 +1,111 @@
+# Johari Window: Decisions and Loops — Teaching Your Code to Think
+
+The Johari Window helps you understand the gap between what you *think* you know and what you *actually* know. Fill this out honestly — it's for your eyes only.
+
+---
+
+## Before This Chapter
+
+*Fill this out BEFORE you start reading or solving problems.*
+
+### I Know Well (Open)
+*Things I'm confident I understand and could explain to someone else.*
+
+**If/else statements:**
+-
+-
+
+**Loops (for, while):**
+-
+-
+
+**Comparison operators (==, <, >, etc.):**
+-
+-
+
+### I Think I Know, But I'm Not Sure (Hidden)
+*Things I've seen before but couldn't confidently explain or implement from scratch.*
+
+**If/else statements:**
+-
+-
+
+**Loops (for, while):**
+-
+-
+
+**Nested loops:**
+-
+-
+
+### I Know I Don't Know (Blind Spot)
+*Things I've heard of but haven't learned yet.*
+
+**Switch/match statements:**
+-
+-
+
+**Break and continue:**
+-
+-
+
+**Pattern printing with nested loops:**
+-
+-
+
+### I Haven't Even Thought About (Unknown)
+*Leave this blank for now — you'll fill it in after the chapter when you discover things you didn't know existed!*
+
+---
+
+## After This Chapter
+
+*Fill this out AFTER completing the chapter and all practice problems.*
+
+### Now I Truly Understand (Open — Expanded)
+*Things that moved from "Hidden" or "Blind Spot" to truly understood.*
+
+**Writing if/elif/else in Python / Java / C++:**
+-
+-
+
+**For loops vs. while loops (and when to use each):**
+-
+-
+
+**Nested loops and pattern printing:**
+-
+-
+
+### Surprised Me! (Was Unknown/Blind, Now Open)
+*Things you discovered that you didn't even know existed before this chapter.*
+
+-
+-
+-
+
+### Still Working On (Honest Self-Assessment)
+*Things you understand the basics of but need more practice with.*
+
+-
+-
+-
+
+### Questions I Now Have (New Curiosity)
+*New questions that came up while learning. These often point to deeper understanding!*
+
+-
+-
+-
+
+---
+
+### Reflection
+
+*In 2-3 sentences, what was the most important thing you learned in this chapter?*
+
+>
+
+*What would you tell a friend who's about to start this chapter?*
+
+>

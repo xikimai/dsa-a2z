@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+*.egg
+
+# Java
+*.class
+target/
+*.jar
+*.war
+.idea/
+*.iml
+
+# C++
+*.o
+*.out
+*.exe
+*.dSYM/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test output
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Node (markdownlint)
+node_modules/

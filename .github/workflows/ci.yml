@@ -1,0 +1,228 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ──────────────────────────────────────────────────────────────────────
+  # Validate markdown content: links, GitBook syntax, linting
+  # ──────────────────────────────────────────────────────────────────────
+  validate-content:
+    name: Validate Content
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate SUMMARY.md links
+        run: |
+          errors=0
+          while IFS= read -r link; do
+            if [[ ! -f "$link" ]]; then
+              echo "::error::Broken link in SUMMARY.md -> $link"
+              errors=$((errors + 1))
+            fi
+          done < <(grep -oP '\[.*?\]\(\K[^)]+' SUMMARY.md)
+
+          if [[ $errors -gt 0 ]]; then
+            echo "Found $errors broken link(s) in SUMMARY.md"
+            exit 1
+          fi
+          echo "All SUMMARY.md links valid"
+
+      - name: Check GitBook tag balance
+        run: |
+          errors=0
+          while IFS= read -r file; do
+            tabs_open=$(grep -c '{% tabs %}' "$file" 2>/dev/null || true)
+            tabs_close=$(grep -c '{% endtabs %}' "$file" 2>/dev/null || true)
+            tab_open=$(grep -c '{% tab ' "$file" 2>/dev/null || true)
+            tab_close=$(grep -c '{% endtab %}' "$file" 2>/dev/null || true)
+            hint_open=$(grep -c '{% hint' "$file" 2>/dev/null || true)
+            hint_close=$(grep -c '{% endhint %}' "$file" 2>/dev/null || true)
+
+            if [[ $tabs_open -ne $tabs_close ]]; then
+              echo "::error file=$file::Unbalanced tabs (open=$tabs_open, close=$tabs_close)"
+              errors=$((errors + 1))
+            fi
+            if [[ $tab_open -ne $tab_close ]]; then
+              echo "::error file=$file::Unbalanced tab (open=$tab_open, close=$tab_close)"
+              errors=$((errors + 1))
+            fi
+            if [[ $hint_open -ne $hint_close ]]; then
+              echo "::error file=$file::Unbalanced hint (open=$hint_open, close=$hint_close)"
+              errors=$((errors + 1))
+            fi
+          done < <(find . -name '*.md' -not -path './.git/*' -not -path './.claude/*' -not -name 'CLAUDE.md' -not -name 'striver-a2z.md')
+
+          if [[ $errors -gt 0 ]]; then
+            echo "Found $errors GitBook syntax error(s)"
+            exit 1
+          fi
+          echo "All GitBook tags balanced"
+
+      - name: Lint markdown
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        continue-on-error: true
+        with:
+          globs: |
+            **/*.md
+            !**/node_modules/**
+
+  # ──────────────────────────────────────────────────────────────────────
+  # Python tests
+  # ──────────────────────────────────────────────────────────────────────
+  test-python:
+    name: Test Python
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install pytest
+        run: pip install -r requirements.txt
+
+      - name: Inject solutions into practice files
+        run: |
+          # CI tests validate solutions are correct, not student skeletons.
+          # For each solution file, copy it over the matching practice file.
+          for sol_file in code/python/ch*/solutions/*_sol.py; do
+            [ -f "$sol_file" ] || continue
+            sol_name=$(basename "$sol_file" .py)        # e.g. warmup_01_sol
+            type_nn="${sol_name%_sol}"                   # e.g. warmup_01
+            chapter_dir=$(dirname "$(dirname "$sol_file")")
+            practice_file=$(find "$chapter_dir/practice" -name "${type_nn}_*.py" ! -name '__init__.py' | head -1)
+            if [[ -n "$practice_file" ]]; then
+              cp "$sol_file" "$practice_file"
+            fi
+          done
+          echo "Solutions injected into practice files for CI testing"
+
+      - name: Run Python tests
+        run: |
+          found=0
+          failed=0
+
+          for test_dir in code/python/ch*/tests; do
+            [ -d "$test_dir" ] || continue
+            ls "$test_dir"/*.py >/dev/null 2>&1 || continue
+
+            chapter=$(basename "$(dirname "$test_dir")")
+            echo ""
+            echo "=== $chapter ==="
+            found=$((found + 1))
+
+            if ! python -m pytest "$test_dir" -v --tb=short; then
+              failed=$((failed + 1))
+            fi
+          done
+
+          echo ""
+          echo "Tested $found chapter(s), $failed failure(s)"
+          [[ $failed -eq 0 ]]
+
+  # ──────────────────────────────────────────────────────────────────────
+  # Java tests
+  # ──────────────────────────────────────────────────────────────────────
+  test-java:
+    name: Test Java
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Run Java tests
+        working-directory: code/java
+        run: |
+          found=0
+          failed=0
+
+          for test_dir in ch*/tests; do
+            [ -d "$test_dir" ] || continue
+            ls "$test_dir"/*.java >/dev/null 2>&1 || continue
+
+            chapter=$(dirname "$test_dir")
+            echo ""
+            echo "=== $chapter ==="
+            found=$((found + 1))
+
+            # Compile all java files in the chapter
+            if ! find "$chapter" -name '*.java' -exec javac {} +; then
+              echo "COMPILE ERROR in $chapter"
+              failed=$((failed + 1))
+              continue
+            fi
+
+            # Run each test class with assertions enabled
+            for test_file in "$test_dir"/*.java; do
+              class_name=$(basename "$test_file" .java)
+              package="$chapter.tests.$class_name"
+              echo "Running $package..."
+              if ! java -ea "$package"; then
+                failed=$((failed + 1))
+              fi
+            done
+          done
+
+          echo ""
+          echo "Tested $found chapter(s), $failed failure(s)"
+          [[ $failed -eq 0 ]]
+
+  # ──────────────────────────────────────────────────────────────────────
+  # C++ tests
+  # ──────────────────────────────────────────────────────────────────────
+  test-cpp:
+    name: Test C++
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run C++ tests
+        working-directory: code/cpp
+        run: |
+          found=0
+          failed=0
+
+          for test_dir in ch*/tests; do
+            [ -d "$test_dir" ] || continue
+            ls "$test_dir"/*.cpp >/dev/null 2>&1 || continue
+
+            chapter=$(dirname "$test_dir")
+            echo ""
+            echo "=== $chapter ==="
+            found=$((found + 1))
+
+            for test_file in "$test_dir"/*.cpp; do
+              name=$(basename "$test_file" .cpp)
+              echo -n "  $name... "
+
+              if ! g++ -std=c++17 -Wall -Wextra -O2 -I"$chapter" -o "/tmp/$name" "$test_file" 2>&1; then
+                echo "COMPILE ERROR"
+                failed=$((failed + 1))
+                continue
+              fi
+
+              if "/tmp/$name"; then
+                echo ""
+              else
+                echo "FAIL"
+                failed=$((failed + 1))
+              fi
+
+              rm -f "/tmp/$name"
+            done
+          done
+
+          echo ""
+          echo "Tested $found chapter(s), $failed failure(s)"
+          [[ $failed -eq 0 ]]

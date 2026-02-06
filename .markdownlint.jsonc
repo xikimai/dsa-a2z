@@ -1,0 +1,20 @@
+{
+  // GitBook-compatible markdownlint config
+  // Disables rules that conflict with GitBook syntax
+  "default": true,
+
+  // Line length — disabled (code blocks and tables can be long)
+  "MD013": false,
+
+  // Inline HTML — disabled (GitBook uses <details>, <summary>)
+  "MD033": false,
+
+  // First line should be top-level heading — disabled (SUMMARY.md, johari.md)
+  "MD041": false,
+
+  // Duplicate headings — allow in sibling sections (e.g., "Johari Window" repeated)
+  "MD024": { "siblings_only": true },
+
+  // Fenced code blocks style
+  "MD046": { "style": "fenced" }
+}
