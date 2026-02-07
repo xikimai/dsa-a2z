@@ -1,3 +1,5 @@
-# Chapter 18: Greedy Algorithms — The Smart Shortcut
+# Greedy Algorithms — The Smart Shortcut
 
-> Coming soon...
+{% hint style="warning" %}
+**Coming Soon!** This chapter is being written. Check back soon, or follow the repo for updates.
+{% endhint %}

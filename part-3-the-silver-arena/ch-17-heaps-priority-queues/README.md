@@ -1,3 +1,5 @@
-# Chapter 17: Heaps & Priority Queues — The VIP Line
+# Heaps & Priority Queues — The VIP Line
 
-> Coming soon...
+{% hint style="warning" %}
+**Coming Soon!** This chapter is being written. Check back soon, or follow the repo for updates.
+{% endhint %}

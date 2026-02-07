@@ -1,5 +1,5 @@
 # Hashing — The Secret Decoder Ring
 
-> Coming soon! This chapter is under construction.
-
-Check the [Table of Contents](../../SUMMARY.md) to see the full workbook outline.
+{% hint style="warning" %}
+**Coming Soon!** This chapter is being written. Check back soon, or follow the repo for updates.
+{% endhint %}

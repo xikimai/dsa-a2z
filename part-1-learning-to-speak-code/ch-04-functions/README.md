@@ -1053,6 +1053,24 @@ Solve these problems in all three languages. Start with warm-ups, then progress 
 4. If stuck for 20 minutes, check the solution file for hints (but try first!)
 {% endhint %}
 
+
+{% hint style="info" %}
+**Try in Google Colab!** Solve these problems in your browser — no setup needed.
+
+[C1: Prime Check](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch04/challenge_01_prime_check.ipynb) | 
+[C2: Apply Operations](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch04/challenge_02_apply_operations.ipynb) | 
+[P1: Calculator](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch04/practice_01_calculator.ipynb) | 
+[P2: Password Strength](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch04/practice_02_password_strength.ipynb) | 
+[P3: Temperature](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch04/practice_03_temperature.ipynb) | 
+[P4: Stats](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch04/practice_04_stats.ipynb) | 
+[W1: Greeting](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch04/warmup_01_greeting.ipynb) | 
+[W2: Power](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch04/warmup_02_power.ipynb) | 
+[W3: Min Of Two](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch04/warmup_03_min_of_two.ipynb) | 
+[W4: Repeat String](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch04/warmup_04_repeat_string.ipynb) | 
+[W5: Double List](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch04/warmup_05_double_list.ipynb)
+
+{% endhint %}
+
 ---
 
 ## Language Idioms

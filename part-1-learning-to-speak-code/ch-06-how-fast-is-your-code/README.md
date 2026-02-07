@@ -880,6 +880,23 @@ Solve these in order! Warmups build fundamentals, Practice combines concepts, an
 **Something different about this chapter's problems**: W1, W2, W3, and C2 don't ask you to solve an algorithmic problem — they ask you to **analyze** code. You're learning a *meta-skill*: the ability to reason about code speed without running it. This is what separates a coder from an algorithm designer.
 {% endhint %}
 
+
+{% hint style="info" %}
+**Try in Google Colab!** Solve these problems in your browser — no setup needed.
+
+[C1: Two Sum Three Ways](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch06/challenge_01_two_sum_three_ways.ipynb) | 
+[C2: Performance Showdown](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch06/challenge_02_performance_showdown.ipynb) | 
+[P1: Contains Duplicate](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch06/practice_01_contains_duplicate.ipynb) | 
+[P2: Max Subarray Brute](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch06/practice_02_max_subarray_brute.ipynb) | 
+[P3: Sorted Squares](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch06/practice_03_sorted_squares.ipynb) | 
+[P4: Majority Element](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch06/practice_04_majority_element.ipynb) | 
+[W1: Count Steps](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch06/warmup_01_count_steps.ipynb) | 
+[W2: Fast Enough](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch06/warmup_02_fast_enough.ipynb) | 
+[W3: Mystery Complexity](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch06/warmup_03_mystery_complexity.ipynb) | 
+[W4: Sum To N](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch06/warmup_04_sum_to_n.ipynb)
+
+{% endhint %}
+
 ---
 
 ## Language Idioms

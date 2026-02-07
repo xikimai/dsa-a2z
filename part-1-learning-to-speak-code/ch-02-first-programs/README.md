@@ -984,6 +984,23 @@ Head to the `code/` directory and solve these problems. Run the tests to check y
 ./scripts/run_tests.sh ch02 cpp
 ```
 
+
+{% hint style="info" %}
+**Try in Google Colab!** Solve these problems in your browser — no setup needed.
+
+[C1: Extract Digits](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch02/challenge_01_extract_digits.ipynb) | 
+[C2: Quadratic](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch02/challenge_02_quadratic.ipynb) | 
+[P1: Circle](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch02/practice_01_circle.ipynb) | 
+[P2: Time Conversion](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch02/practice_02_time_conversion.ipynb) | 
+[P3: Distance](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch02/practice_03_distance.ipynb) | 
+[W1: Greeting](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch02/warmup_01_greeting.ipynb) | 
+[W2: Rectangle Area](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch02/warmup_02_rectangle_area.ipynb) | 
+[W3: Celsius To Fahrenheit](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch02/warmup_03_celsius_to_fahrenheit.ipynb) | 
+[W4: Swap](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch02/warmup_04_swap.ipynb) | 
+[W5: Last Digit](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch02/warmup_05_last_digit.ipynb)
+
+{% endhint %}
+
 ---
 
 ## Language Idioms

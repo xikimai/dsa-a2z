@@ -1124,6 +1124,26 @@ Head to the `code/` directory and solve these problems. Run the tests to check y
 ./scripts/run_tests.sh ch03 cpp
 ```
 
+
+{% hint style="info" %}
+**Try in Google Colab!** Solve these problems in your browser — no setup needed.
+
+[C1: Diamond](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/challenge_01_diamond.ipynb) | 
+[C2: Prime Check](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/challenge_02_prime_check.ipynb) | 
+[C3: Collatz](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/challenge_03_collatz.ipynb) | 
+[P1: Fizzbuzz](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/practice_01_fizzbuzz.ipynb) | 
+[P2: Digit Count](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/practice_02_digit_count.ipynb) | 
+[P3: Reverse Number](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/practice_03_reverse_number.ipynb) | 
+[P4: Right Triangle](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/practice_04_right_triangle.ipynb) | 
+[W1: Even Odd](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/warmup_01_even_odd.ipynb) | 
+[W2: Absolute Value](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/warmup_02_absolute_value.ipynb) | 
+[W3: Largest Of Three](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/warmup_03_largest_of_three.ipynb) | 
+[W4: Count Down](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/warmup_04_count_down.ipynb) | 
+[W5: Sum 1 To N](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/warmup_05_sum_1_to_n.ipynb) | 
+[W6: Multiplication Table](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch03/warmup_06_multiplication_table.ipynb)
+
+{% endhint %}
+
 ---
 
 ## Language Idioms

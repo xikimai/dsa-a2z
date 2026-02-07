@@ -1256,6 +1256,27 @@ python -m pytest code/python/ch05/tests/test_warmup_01.py -v
 python -m pytest code/python/ch05/tests/ -v
 ```
 
+
+{% hint style="info" %}
+**Try in Google Colab!** Solve these problems in your browser — no setup needed.
+
+[C1: Find Duplicates](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/challenge_01_find_duplicates.ipynb) | 
+[C2: Group Anagrams](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/challenge_02_group_anagrams.ipynb) | 
+[C3: Rotate Array](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/challenge_03_rotate_array.ipynb) | 
+[P1: Union Arrays](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/practice_01_union_arrays.ipynb) | 
+[P2: Anagram Check](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/practice_02_anagram_check.ipynb) | 
+[P3: Two Sum](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/practice_03_two_sum.ipynb) | 
+[P4: Sort By Frequency](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/practice_04_sort_by_frequency.ipynb) | 
+[P5: Longest Common Prefix](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/practice_05_longest_common_prefix.ipynb) | 
+[W1: Second Largest](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/warmup_01_second_largest.ipynb) | 
+[W2: Reverse List](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/warmup_02_reverse_list.ipynb) | 
+[W3: Count Vowels](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/warmup_03_count_vowels.ipynb) | 
+[W4: Remove Duplicates](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/warmup_04_remove_duplicates.ipynb) | 
+[W5: Char Frequency](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/warmup_05_char_frequency.ipynb) | 
+[W6: Move Zeros](https://colab.research.google.com/github/xikimai/dsa-a2z/blob/main/code/notebooks/ch05/warmup_06_move_zeros.ipynb)
+
+{% endhint %}
+
 ---
 
 ## Language Idioms

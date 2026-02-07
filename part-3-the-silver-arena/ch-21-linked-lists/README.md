@@ -1,3 +1,5 @@
-# Chapter 21: Linked Lists — Pointers and Connections
+# Linked Lists — Pointers and Connections
 
-> Coming soon...
+{% hint style="warning" %}
+**Coming Soon!** This chapter is being written. Check back soon, or follow the repo for updates.
+{% endhint %}

@@ -40,9 +40,16 @@ Every chapter follows the same pattern:
 | **IV. The Gold Crucible** | Dynamic programming, trees, shortest paths | **Gold** | 12-14 weeks |
 | **V. The Platinum Summit** | Segment trees, advanced DP, geometry | **Platinum** | 10-12 weeks |
 
-**Total: ~31 chapters over ~2 years at a steady pace.**
+**Total: 35 chapters over ~2 years at a steady pace.**
 
 ## How to Use This Book
+
+### Step 0: Get the Code
+
+```bash
+git clone https://github.com/xikimai/dsa-a2z.git
+cd dsa-a2z
+```
 
 ### Step 1: Set Up Your Environment
 Start with [Chapter 0: Setting Up Your Coding Workshop](part-0-adventure-begins/ch-00-dev-environment/README.md). You'll install Python, Java, C++, and VS Code on your Mac.
