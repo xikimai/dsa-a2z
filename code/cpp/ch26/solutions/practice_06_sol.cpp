@@ -1,0 +1,57 @@
+/*
+ * Solution for Practice 6: LCA of Binary Tree
+ * Chapter 26: Trees — Branches of Logic
+ */
+#include <algorithm>
+#include <climits>
+#include <iostream>
+#include <queue>
+#include <sstream>
+#include <string>
+#include <unordered_map>
+#include <vector>
+using namespace std;
+
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int v) : val(v), left(nullptr), right(nullptr) {}
+};
+
+TreeNode* buildTree(vector<int> values, int null_val = INT_MIN) {
+    if (values.empty() || values[0] == null_val) return nullptr;
+    TreeNode* root = new TreeNode(values[0]);
+    queue<TreeNode*> q;
+    q.push(root);
+    int i = 1;
+    while (!q.empty() && i < (int)values.size()) {
+        TreeNode* node = q.front(); q.pop();
+        if (i < (int)values.size() && values[i] != null_val) {
+            node->left = new TreeNode(values[i]);
+            q.push(node->left);
+        }
+        i++;
+        if (i < (int)values.size() && values[i] != null_val) {
+            node->right = new TreeNode(values[i]);
+            q.push(node->right);
+        }
+        i++;
+    }
+    return root;
+}
+
+TreeNode* lcaHelper(TreeNode* node, int p, int q) {
+    if (!node) return nullptr;
+    if (node->val == p || node->val == q) return node;
+    TreeNode* left = lcaHelper(node->left, p, q);
+    TreeNode* right = lcaHelper(node->right, p, q);
+    if (left && right) return node;
+    return left ? left : right;
+}
+int solve(TreeNode* root, int p, int q) {
+    TreeNode* res = lcaHelper(root, p, q);
+    return res ? res->val : -1;
+}
+
+int main() { return 0; }

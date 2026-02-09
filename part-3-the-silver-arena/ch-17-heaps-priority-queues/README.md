@@ -36,7 +36,13 @@ That magical clipboard is a **heap** — and the system it powers is called a **
 
 ---
 
-[Johari Window: Before](johari.md)
+## Johari Window: Before
+
+Before diving in, take 5 minutes to fill out the **"Before"** section of your [Johari Window worksheet](johari.md).
+
+{% hint style="info" %}
+Be honest with yourself! Knowing what you *don't* know is the first step to learning it. There are no wrong answers — only honest ones.
+{% endhint %}
 
 ---
 
@@ -1326,7 +1332,9 @@ The two-heap median technique (Practice P4) splits the data into two halves — 
 
 ---
 
-[Johari Window: After](johari.md)
+## Johari Window: After
+
+Now fill out the **"After"** section of your [Johari Window worksheet](johari.md). Compare your "Before" and "After" answers — what surprised you? What do you still want to explore?
 
 ---
 

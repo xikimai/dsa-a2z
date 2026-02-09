@@ -33,7 +33,13 @@ Today you learn to think like a chess engine.
 
 ---
 
-[Johari Window: Before](johari.md)
+## Johari Window: Before
+
+Before diving in, take 5 minutes to fill out the **"Before"** section of your [Johari Window worksheet](johari.md).
+
+{% hint style="info" %}
+Be honest with yourself! Knowing what you *don't* know is the first step to learning it. There are no wrong answers — only honest ones.
+{% endhint %}
 
 ---
 
@@ -1314,7 +1320,9 @@ for (int mask = 0; mask < (1 << n); mask++) {
 
 ---
 
-[Johari Window: After](johari.md)
+## Johari Window: After
+
+Now fill out the **"After"** section of your [Johari Window worksheet](johari.md). Compare your "Before" and "After" answers — what surprised you? What do you still want to explore?
 
 ---
 

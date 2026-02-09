@@ -1,0 +1,18 @@
+package ch32.practice;
+
+import java.util.*;
+
+/**
+ * Warmup 2: Trie Prefix Count
+ * Chapter 32: String Algorithms — Beyond Brute Force
+ *
+ * INSTRUCTIONS: Replace the body of solve() with your solution.
+ */
+public class Warmup02TriePrefixCount {
+    public static int[] solve(String[] words, String[] prefixes) {
+        // TODO: Replace this with your solution
+        return new int[prefixes.length];
+    }
+
+    public static void main(String[] args) { Scanner sc = new Scanner(System.in); sc.close(); }
+}
