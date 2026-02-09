@@ -1,7 +1,7 @@
-# Graphs II --- Real Problems
+# Graphs II — Real Problems
 
 {% hint style="info" %}
-**Welcome to the real graph battlefield!** In Chapter 19, you learned BFS and DFS on abstract graphs --- nodes connected by edges. Now it's time to use those tools on the kind of problems that actually show up in USACO and coding interviews: grids, flood fill, rotten oranges, and more. Most of these problems are really just BFS/DFS in disguise, but the disguise is clever. By the end of this chapter, when someone gives you a 2D grid, you'll instantly see the graph hiding inside it.
+**Welcome to the real graph battlefield!** In Chapter 19, you learned BFS and DFS on abstract graphs — nodes connected by edges. Now it's time to use those tools on the kind of problems that actually show up in USACO and coding interviews: grids, flood fill, rotten oranges, and more. Most of these problems are really just BFS/DFS in disguise, but the disguise is clever. By the end of this chapter, when someone gives you a 2D grid, you'll instantly see the graph hiding inside it.
 {% endhint %}
 
 ## Chapter Goals
@@ -23,19 +23,19 @@ By the end of this chapter, you will:
 
 ## The Story: "The Island Explorer"
 
-You're a cartographer hired to map a vast, uncharted archipelago. Your satellite gives you a bird's-eye photo --- a massive grid of pixels where `1` means land and `0` means water.
+You're a cartographer hired to map a vast, uncharted archipelago. Your satellite gives you a bird's-eye photo — a massive grid of pixels where `1` means land and `0` means water.
 
 Your boss asks: **"How many separate islands are there?"**
 
 You squint at the map. Some land pixels cluster together in big blobs. Others are tiny specks. Two land pixels are "on the same island" if you can walk between them by stepping north, south, east, or west (no diagonal swimming!). Your job: count the distinct blobs.
 
-You start at the top-left corner and scan the grid. When you find a land pixel, you "flood" outward --- checking all neighbors, then THEIR neighbors, marking everything you've touched. By the time the flood stops, you've mapped one complete island. Then you keep scanning for the next unvisited land pixel. Each new flood is a new island.
+You start at the top-left corner and scan the grid. When you find a land pixel, you "flood" outward — checking all neighbors, then THEIR neighbors, marking everything you've touched. By the time the flood stops, you've mapped one complete island. Then you keep scanning for the next unvisited land pixel. Each new flood is a new island.
 
-This is **flood fill** --- and it's just BFS or DFS on a grid graph. The same technique your computer uses for the paint bucket tool in drawing apps, for finding enclosed regions in a Go board, and for solving maze problems in competitions.
+This is **flood fill** — and it's just BFS or DFS on a grid graph. The same technique your computer uses for the paint bucket tool in drawing apps, for finding enclosed regions in a Go board, and for solving maze problems in competitions.
 
 But then your boss adds a twist: **"A disease is spreading across the islands. It starts at several locations simultaneously and spreads to adjacent land cells each day. How many days until every cell is infected?"**
 
-Now you need BFS that starts from MULTIPLE sources at once --- all the infected cells go into the queue at the beginning, and the BFS ripples outward from all of them simultaneously. This is **multi-source BFS**, and it's one of the most common patterns in competitive programming.
+Now you need BFS that starts from MULTIPLE sources at once — all the infected cells go into the queue at the beginning, and the BFS ripples outward from all of them simultaneously. This is **multi-source BFS**, and it's one of the most common patterns in competitive programming.
 
 Welcome to the real problems. The islands are waiting.
 
@@ -65,7 +65,7 @@ Here's a 3x3 image where each cell has a color (a number):
 1  0  1
 ```
 
-You click the paint bucket on cell (1,1) --- row 1, column 1 --- and choose color `2`. The paint bucket should change that cell AND all connected cells of the same original color to the new color. What does the image look like after?
+You click the paint bucket on cell (1,1) — row 1, column 1 — and choose color `2`. The paint bucket should change that cell AND all connected cells of the same original color to the new color. What does the image look like after?
 
 {% hint style="info" %}
 **Answer:** Cell (1,1) has color 1. All cells connected to it (via up/down/left/right) with color 1 get changed to 2:
@@ -74,7 +74,7 @@ You click the paint bucket on cell (1,1) --- row 1, column 1 --- and choose colo
 2  2  0
 2  0  1
 ```
-The bottom-right `1` stays unchanged --- it's separated from the main blob by `0`'s. This is **flood fill**, which you'll learn in Section 20.2.
+The bottom-right `1` stays unchanged — it's separated from the main blob by `0`'s. This is **flood fill**, which you'll learn in Section 20.2.
 {% endhint %}
 
 ### Puzzle 2: "The Rotten Oranges"
@@ -92,12 +92,12 @@ Each minute, any fresh orange adjacent (up/down/left/right) to a rotten orange b
 {% hint style="info" %}
 **Minute-by-minute:**
 - Start: rotten at (0,0)
-- Minute 1: (0,0) rots (0,1) and (1,0) --- 2 new rotten
-- Minute 2: (0,1) rots (0,2); (1,0) rots (1,1) --- 2 new rotten
-- Minute 3: (1,1) rots (2,1); (0,2) has no fresh neighbors --- 1 new rotten
-- Minute 4: (2,1) rots (2,2) --- 1 new rotten
+- Minute 1: (0,0) rots (0,1) and (1,0) — 2 new rotten
+- Minute 2: (0,1) rots (0,2); (1,0) rots (1,1) — 2 new rotten
+- Minute 3: (1,1) rots (2,1); (0,2) has no fresh neighbors — 1 new rotten
+- Minute 4: (2,1) rots (2,2) — 1 new rotten
 
-Answer: **4 minutes**. This is **multi-source BFS** --- you'll learn it in Section 20.4.
+Answer: **4 minutes**. This is **multi-source BFS** — you'll learn it in Section 20.4.
 {% endhint %}
 
 ### Puzzle 3: "The Deque Trick"
@@ -135,7 +135,7 @@ Grid:                    Graph:
 +---+---+---+
 ```
 
-In this grid, `1` is land and `0` is water. Edges only connect adjacent land cells. Notice that `(1,2)` and `(2,2)` are isolated --- they're water, so they have no edges.
+In this grid, `1` is land and `0` is water. Edges only connect adjacent land cells. Notice that `(1,2)` and `(2,2)` are isolated — they're water, so they have no edges.
 
 ### The Direction Array Pattern
 
@@ -200,7 +200,7 @@ int dc8[] = {-1, 0, 1, -1, 1, -1, 0, 1};
 {% endtab %}
 {% endtabs %}
 
-**Why direction arrays?** They eliminate four copy-pasted if-blocks. When you switch from 4-directional to 8-directional, you just change the arrays --- no logic changes needed.
+**Why direction arrays?** They eliminate four copy-pasted if-blocks. When you switch from 4-directional to 8-directional, you just change the arrays — no logic changes needed.
 
 ### Language Spotlight: Grid Graphs
 
@@ -315,9 +315,9 @@ vector<vector<int>> floodFill(vector<vector<int>>& image,
 **Critical:** Check `if original == color` at the start! Without this, if you start on a cell whose color already matches the target, you'll endlessly re-visit neighbors (since "original" and "new" are the same). This is the #1 flood fill bug.
 {% endhint %}
 
-**Time Complexity:** O(m * n) --- each cell is visited at most once.
+**Time Complexity:** O(m * n) — each cell is visited at most once.
 
-**Space Complexity:** O(m * n) --- worst case, the entire grid is one color, so the queue/stack holds all cells.
+**Space Complexity:** O(m * n) — worst case, the entire grid is one color, so the queue/stack holds all cells.
 
 ---
 
@@ -427,7 +427,7 @@ int numIslands(vector<vector<int>>& grid) {
 
 ## 20.4 Multi-Source BFS
 
-Regular BFS starts from ONE source and radiates outward. **Multi-source BFS** starts from MULTIPLE sources simultaneously. It's like dropping multiple pebbles into a pond at once --- the ripples spread out from all of them at the same time.
+Regular BFS starts from ONE source and radiates outward. **Multi-source BFS** starts from MULTIPLE sources simultaneously. It's like dropping multiple pebbles into a pond at once — the ripples spread out from all of them at the same time.
 
 The trick: **enqueue ALL sources at the start** before beginning the BFS loop. Then BFS naturally processes them level-by-level, as if all sources started spreading at the same time.
 
@@ -667,7 +667,7 @@ vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
 Instead of checking every `'O'` region to see if it's surrounded (hard!), flip the approach:
 1. Start from all `'O'`s on the border.
 2. BFS/DFS to mark all `'O'`s connected to the border as "safe" (change to a temporary marker like `'S'`).
-3. Any remaining `'O'` is surrounded --- flip it to `'X'`.
+3. Any remaining `'O'` is surrounded — flip it to `'X'`.
 4. Change all `'S'`s back to `'O'`.
 
 {% tabs %}
@@ -781,7 +781,7 @@ void solveSurrounded(vector<vector<char>>& board) {
 {% endtabs %}
 
 {% hint style="info" %}
-**The Border-First Trick** is a powerful pattern: instead of checking "is this region surrounded?" (which is complicated), ask "is this region connected to the border?" (which is easy --- just BFS from the border). Any region NOT connected to the border must be surrounded. This same idea solves "Number of Enclaves" (P5) and similar problems.
+**The Border-First Trick** is a powerful pattern: instead of checking "is this region surrounded?" (which is complicated), ask "is this region connected to the border?" (which is easy — just BFS from the border). Any region NOT connected to the border must be surrounded. This same idea solves "Number of Enclaves" (P5) and similar problems.
 {% endhint %}
 
 ---
@@ -902,7 +902,7 @@ int zeroOneBfs(vector<vector<int>>& grid, pair<int,int> src, pair<int,int> dst) 
 
 "When I see a grid problem in a contest, my first thought is always: *what's the graph?* Each cell is a node. Edges connect neighbors. Then the question becomes: is this a flood fill (connected components)? Is it a shortest path (BFS)? Is it multi-source? Once you identify the graph structure, the solution usually falls out.
 
-For multi-source BFS problems, I like to think of it as 'BFS from a super-source that connects to all the real sources with 0-cost edges.' That's literally what we're doing when we enqueue all sources at the start --- we're simulating a hidden node that connects to all of them."
+For multi-source BFS problems, I like to think of it as 'BFS from a super-source that connects to all the real sources with 0-cost edges.' That's literally what we're doing when we enqueue all sources at the start — we're simulating a hidden node that connects to all of them."
 
 **Benq's competition tip:**
 
@@ -926,16 +926,16 @@ flowchart TD
 | Lens | Insight |
 |------|---------|
 | **Constraints** | Grid is small (10x10 for the basic problem, but pattern works for 1000x1000) |
-| **Brute Force** | Simulate each minute by scanning the whole grid --- O((m*n)^2) |
+| **Brute Force** | Simulate each minute by scanning the whole grid — O((m*n)^2) |
 | **Pattern** | Multiple sources spreading simultaneously = multi-source BFS |
-| **Optimization** | Enqueue all sources, BFS processes each cell at most once --- O(m*n) |
+| **Optimization** | Enqueue all sources, BFS processes each cell at most once — O(m*n) |
 | **Proof** | BFS level k = cells at distance k from nearest source = cells rotting at minute k |
 
 ---
 
 ## AOPS Showcase: Number of Islands
 
-Let's solve the same problem --- counting islands in a 0/1 grid --- three different ways, each revealing a deeper idea.
+Let's solve the same problem — counting islands in a 0/1 grid — three different ways, each revealing a deeper idea.
 
 ### Approach 1: DFS Flood Fill
 
@@ -1213,18 +1213,18 @@ int numIslandsUF(vector<vector<int>>& grid) {
 | BFS Flood Fill | O(m*n) | O(min(m,n)) queue | Yes | Large grids, contests |
 | Union-Find | O(m*n * alpha(m*n)) ~= O(m*n) | O(m*n) parent array | Yes | Dynamic connectivity (edges added over time) |
 
-**Which to use in a contest?** BFS flood fill is the safest default --- no recursion limit worries, easy to reason about, and the same code works for shortest-path variants.
+**Which to use in a contest?** BFS flood fill is the safest default — no recursion limit worries, easy to reason about, and the same code works for shortest-path variants.
 
 ---
 
 ## Legend's Corner
 
 {% hint style="info" %}
-**Tourist (Gennady Korotkevich)** once said in a Codeforces comment that grid BFS problems are some of the most "pure" competitive programming problems --- they test your ability to model a situation as a graph and then apply the right traversal. In USACO Silver, he noted, at least one problem per contest involves grids.
+**Tourist (Gennady Korotkevich)** once said in a Codeforces comment that grid BFS problems are some of the most "pure" competitive programming problems — they test your ability to model a situation as a graph and then apply the right traversal. In USACO Silver, he noted, at least one problem per contest involves grids.
 
-**Neal Wu**, who started competing in 8th grade (your age!), has written that his #1 tip for grid problems is: "Write a clean BFS template once, test it thoroughly, and reuse it forever. Don't rewrite BFS from scratch each time --- copy your template and modify it." That's exactly why we drill the direction-array pattern in this chapter.
+**Neal Wu**, who started competing in 8th grade (your age!), has written that his #1 tip for grid problems is: "Write a clean BFS template once, test it thoroughly, and reuse it forever. Don't rewrite BFS from scratch each time — copy your template and modify it." That's exactly why we drill the direction-array pattern in this chapter.
 
-The best competitors don't memorize solutions --- they memorize *patterns* and adapt them to new problems.
+The best competitors don't memorize solutions — they memorize *patterns* and adapt them to new problems.
 {% endhint %}
 
 ---
@@ -1388,7 +1388,7 @@ int r = id / cols, c = id % cols;
 
 ### Looking Back
 
-- **Ch 19** (Graphs I): BFS and DFS on abstract graphs. Now we apply them to 2D grids --- same algorithms, new disguise!
+- **Ch 19** (Graphs I): BFS and DFS on abstract graphs. Now we apply them to 2D grids — same algorithms, new disguise!
 - **Ch 11** (Hashing): Hash sets for O(1) visited checks. In grid problems we often use a 2D boolean array instead, but the principle is the same.
 - **Ch 10** (Recursion): DFS flood fill IS recursion. Each recursive call explores one direction, and the call stack manages backtracking automatically.
 
@@ -1396,11 +1396,11 @@ int r = id / cols, c = id % cols;
 
 - **Ch 27** (Shortest Paths): When edge weights aren't 0 or 1, you need Dijkstra's algorithm. 0-1 BFS is the special case; Dijkstra is the general case.
 - **Ch 28** (Topological Sort): When the graph is directed and acyclic, topological sort orders the vertices. Useful for dependency problems that grids sometimes encode.
-- **Ch 29** (Union-Find): The third approach in our AOPS Showcase. Union-Find tracks connected components and supports dynamic merging --- essential for "Making a Large Island" (C3) and many USACO problems.
+- **Ch 29** (Union-Find): The third approach in our AOPS Showcase. Union-Find tracks connected components and supports dynamic merging — essential for "Making a Large Island" (C3) and many USACO problems.
 
 ### Cross-Chapter Threads
 
-- **"Reduce to a known problem"**: Every grid problem in this chapter is really a graph problem. The grid is just a visual representation --- the algorithm is always BFS or DFS.
+- **"Reduce to a known problem"**: Every grid problem in this chapter is really a graph problem. The grid is just a visual representation — the algorithm is always BFS or DFS.
 - **"Brute force is a strategy"**: BFS and DFS explore ALL reachable cells. Multi-source BFS is brute-force exploration from multiple starting points simultaneously.
 - **"Space for time"**: The visited array (O(m*n) space) prevents re-exploration, keeping total work to O(m*n) instead of exponential.
 
@@ -1414,11 +1414,11 @@ Now fill out the **"After"** section of your [Johari Window worksheet](johari.md
 
 ## Open Questions Beyond
 
-1. **"Multi-source BFS finds the distance from each cell to the NEAREST source. What if you wanted the distance to the FARTHEST source?"** This is much harder --- BFS only guarantees shortest distances. For farthest distances, you might need to run BFS from each source separately (O(k * m * n)) or find a clever reduction. Think about why "nearest" is easy but "farthest" is hard.
+1. **"Multi-source BFS finds the distance from each cell to the NEAREST source. What if you wanted the distance to the FARTHEST source?"** This is much harder — BFS only guarantees shortest distances. For farthest distances, you might need to run BFS from each source separately (O(k * m * n)) or find a clever reduction. Think about why "nearest" is easy but "farthest" is hard.
 
 2. **"We solved 'Making a Large Island' by labeling components and checking boundaries. What if you could flip TWO zeros instead of one? Or k zeros?"** For k=2, the problem becomes much harder. For general k, this is related to the **network flow** and **augmenting paths** concepts in advanced graph theory. Sometimes a binary-search approach works: "Can we achieve an island of size X by flipping at most k zeros?"
 
-3. **"0-1 BFS uses a deque because edge weights are 0 or 1. What if edge weights are 0, 1, or 2? Does the deque trick still work?"** Not directly --- you'd need something more general. But for weights 0 to W (small W), you can use a technique called **dial's algorithm** with W+1 buckets. 0-1 BFS is the special case with W=1.
+3. **"0-1 BFS uses a deque because edge weights are 0 or 1. What if edge weights are 0, 1, or 2? Does the deque trick still work?"** Not directly — you'd need something more general. But for weights 0 to W (small W), you can use a technique called **dial's algorithm** with W+1 buckets. 0-1 BFS is the special case with W=1.
 
 ---
 
@@ -1426,6 +1426,6 @@ Now fill out the **"After"** section of your [Johari Window worksheet](johari.md
 
 You've now mastered the real-world applications of BFS and DFS on grids: flood fill, multi-source BFS, the border-first trick, and 0-1 BFS. These are the bread and butter of USACO Silver graph problems.
 
-In **Ch 21 (Linked Lists --- Pointers and Connections)**, we shift gears to a fundamental data structure that underpins much of what you've already been using. Queues, stacks, and even graphs can all be built on linked lists. You'll learn pointer manipulation, the fast/slow runner technique, and why linked lists are everywhere in systems programming.
+In **Ch 21 (Linked Lists — Pointers and Connections)**, we shift gears to a fundamental data structure that underpins much of what you've already been using. Queues, stacks, and even graphs can all be built on linked lists. You'll learn pointer manipulation, the fast/slow runner technique, and why linked lists are everywhere in systems programming.
 
 Keep mapping those islands!
