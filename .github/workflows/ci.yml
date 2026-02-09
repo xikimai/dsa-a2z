@@ -55,7 +55,7 @@ jobs:
               echo "::error file=$file::Unbalanced hint (open=$hint_open, close=$hint_close)"
               errors=$((errors + 1))
             fi
-          done < <(find . -name '*.md' -not -path './.git/*' -not -path './.claude/*' -not -name 'CLAUDE.md' -not -name 'striver-a2z.md')
+          done < <(find . -name '*.md' -not -path './.git/*' -not -path './.claude/*' -not -path './specs/*' -not -name 'CLAUDE.md' -not -name 'striver-a2z.md')
 
           if [[ $errors -gt 0 ]]; then
             echo "Found $errors GitBook syntax error(s)"
