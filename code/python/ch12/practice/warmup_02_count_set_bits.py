@@ -1,15 +1,39 @@
 """
-Solution for Warmup 2: Count Set Bits
-======================================
+Warmup 2: Count Set Bits
+==========================
 Chapter 12: Bit Manipulation — The Language of Computers
 
-APPROACH
---------
-Brian Kernighan's algorithm: n &= (n - 1) clears the lowest set bit.
-Loop until n becomes 0, counting iterations.
+PROBLEM
+-------
+Given a non-negative integer n, return the number of 1-bits (set bits)
+in its binary representation.
 
-TIME COMPLEXITY:  O(k) where k = number of set bits
-SPACE COMPLEXITY: O(1)
+INPUT FORMAT
+------------
+A single non-negative integer n.
+
+OUTPUT FORMAT
+-------------
+A single integer — the count of set bits in n.
+
+CONSTRAINTS
+-----------
+- 0 <= n <= 10^9
+
+EXAMPLES
+--------
+Input:
+  42
+Output: 3
+
+Input:
+  255
+Output: 8
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

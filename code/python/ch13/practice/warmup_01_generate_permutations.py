@@ -1,15 +1,49 @@
 """
-Solution for Warmup 1: Generate All Permutations
-============================================
-Chapter 13: Bronze Battle Plan — Complete Search & Simulation
+Warmup 1: Generate All Permutations
+=====================================
+Chapter 13: Bronze Battle Plan — Putting It All Together
 
-APPROACH
+PROBLEM
+-------
+Given a list of distinct integers, return all possible permutations
+in lexicographic (sorted) order.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers.
+
+OUTPUT FORMAT
+-------------
+Each permutation on its own line as a list.
+
+CONSTRAINTS
+-----------
+- 1 <= len(nums) <= 8
+- -100 <= nums[i] <= 100
+- All elements are distinct
+
+EXAMPLES
 --------
-Backtracking: for each position, try each unused element.
-Sort nums first to ensure lexicographic order.
+Input:
+  1 2 3
+Output:
+  [1, 2, 3]
+  [1, 3, 2]
+  [2, 1, 3]
+  [2, 3, 1]
+  [3, 1, 2]
+  [3, 2, 1]
 
-TIME COMPLEXITY:  O(n! * n) — n! permutations, each takes O(n) to copy
-SPACE COMPLEXITY: O(n) — recursion depth + used array
+Input:
+  2 1
+Output:
+  [1, 2]
+  [2, 1]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

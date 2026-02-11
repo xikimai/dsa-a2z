@@ -1,15 +1,51 @@
 """
-Solution for Practice 4: Power Set Using Bitmasks
-===================================================
+Practice 4: Power Set Using Bitmasks
+======================================
 Chapter 12: Bit Manipulation — The Language of Computers
 
-APPROACH
---------
-Iterate mask from 0 to 2^n - 1. For each mask, include element i
-if (mask >> i) & 1 == 1.
+PROBLEM
+-------
+Given a list of distinct integers, return all possible subsets (the power
+set) using bitmask enumeration. Subsets should be ordered by their bitmask
+value (0 to 2^n - 1).
 
-TIME COMPLEXITY:  O(n * 2^n) — 2^n subsets, each up to n elements
-SPACE COMPLEXITY: O(n * 2^n) — for the result
+INPUT FORMAT
+------------
+A single line of space-separated integers (may be empty).
+
+OUTPUT FORMAT
+-------------
+Each subset on its own line as a list.
+
+CONSTRAINTS
+-----------
+- 0 <= len(nums) <= 15
+- -100 <= nums[i] <= 100
+- All elements are distinct
+
+EXAMPLES
+--------
+Input:
+  1 2 3
+Output:
+  []
+  [1]
+  [2]
+  [1, 2]
+  [3]
+  [1, 3]
+  [2, 3]
+  [1, 2, 3]
+
+Input:
+  (empty)
+Output:
+  []
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

@@ -1,15 +1,45 @@
 """
-Solution for Challenge 1: Aggressive Cows
-==========================================
-Chapter 16: Binary Search Beyond Arrays — Searching on Answers
+Challenge 1: Aggressive Cows
+===============================
+Chapter 16: Binary Search Beyond — When the Answer Is the Question
 
-APPROACH
+PROBLEM
+-------
+Given n stall positions and c cows, place all cows into stalls such that
+the minimum distance between any two cows is maximized. The stalls may
+not be sorted initially. Return the largest possible minimum distance.
+
+INPUT FORMAT
+------------
+First line: space-separated integers (stall positions).
+Second line: a single integer (number of cows).
+
+OUTPUT FORMAT
+-------------
+A single integer — the maximum possible minimum distance.
+
+CONSTRAINTS
+-----------
+- 2 <= len(stalls) <= 10^5
+- 0 <= stalls[i] <= 10^9
+- 2 <= cows <= len(stalls)
+
+EXAMPLES
 --------
-Binary search on answer space [1, max-min]. For each candidate minimum
-distance, greedily place cows and check if all can be placed.
+Input:
+  1 2 8 4 9
+  3
+Output: 3
 
-TIME COMPLEXITY:  O(n * log(max - min))
-SPACE COMPLEXITY: O(1) extra (after sorting)
+Input:
+  1 2 4 8 9
+  2
+Output: 8
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

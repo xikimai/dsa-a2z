@@ -1,17 +1,40 @@
 """
-Solution for Practice 5: Dutch National Flag
-==============================================
-Chapter 15: Two Pointers & Sliding Window — The Caterpillar Method
+Practice 5: Dutch National Flag
+=================================
+Chapter 15: Two Pointers & Sliding Window — The Dance of Indices
 
-APPROACH
+PROBLEM
+-------
+Given an array containing only 0s, 1s, and 2s, sort it in a single
+pass without using a standard sorting algorithm.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers (each 0, 1, or 2; may be empty).
+
+OUTPUT FORMAT
+-------------
+The sorted array as a list.
+
+CONSTRAINTS
+-----------
+- 0 <= len(arr) <= 10^5
+- arr[i] is 0, 1, or 2
+
+EXAMPLES
 --------
-Three-pointer partition: low, mid, high.
-  - arr[mid]==0 → swap with low, advance both
-  - arr[mid]==1 → advance mid
-  - arr[mid]==2 → swap with high, decrement high (don't advance mid)
+Input:
+  2 0 2 1 1 0
+Output: [0, 0, 1, 1, 2, 2]
 
-TIME COMPLEXITY:  O(n) — single pass
-SPACE COMPLEXITY: O(1) — in-place swaps
+Input:
+  2 0 1
+Output: [0, 1, 2]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

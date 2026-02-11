@@ -1,14 +1,44 @@
 """
-Solution for Warmup 2: First and Last Position
-================================================
-Chapter 16: Binary Search Beyond Arrays — Searching on Answers
+Warmup 2: First and Last Position
+====================================
+Chapter 16: Binary Search Beyond — When the Answer Is the Question
 
-APPROACH
+PROBLEM
+-------
+Given a sorted array of integers and a target value, find the first and
+last position (0-indexed) of the target. Return [-1, -1] if not found.
+
+INPUT FORMAT
+------------
+First line: space-separated integers (sorted array, may be empty).
+Second line: a single integer (the target).
+
+OUTPUT FORMAT
+-------------
+A list of two integers [first, last].
+
+CONSTRAINTS
+-----------
+- 0 <= len(arr) <= 10^5
+- -10^6 <= arr[i] <= 10^6
+- Array is sorted in non-decreasing order
+
+EXAMPLES
 --------
-Two binary searches: one for the leftmost occurrence, one for the rightmost.
+Input:
+  5 7 7 8 8 10
+  8
+Output: [3, 4]
 
-TIME COMPLEXITY:  O(log n)
-SPACE COMPLEXITY: O(1)
+Input:
+  5 7 7 8 8 10
+  6
+Output: [-1, -1]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

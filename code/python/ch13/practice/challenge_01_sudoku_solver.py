@@ -1,15 +1,46 @@
 """
-Solution for Challenge 1: Sudoku Solver
-============================================
-Chapter 13: Bronze Battle Plan — Complete Search & Simulation
+Challenge 1: Sudoku Solver
+============================
+Chapter 13: Bronze Battle Plan — Putting It All Together
 
-APPROACH
+PROBLEM
+-------
+Given a 9x9 Sudoku board with some cells filled (1-9) and some empty
+(0), solve the puzzle. Each row, column, and 3x3 box must contain the
+digits 1-9 exactly once.
+
+INPUT FORMAT
+------------
+Nine lines, each with 9 space-separated integers (0 for empty cells).
+
+OUTPUT FORMAT
+-------------
+Nine lines, each with 9 space-separated integers (the solved board).
+
+CONSTRAINTS
+-----------
+- Board is always 9x9
+- 0 <= board[i][j] <= 9
+- The puzzle has exactly one solution
+
+EXAMPLES
 --------
-Backtracking: find first empty cell (0), try digits 1-9, validate
-against row/column/box constraints, recurse.
+Input:
+  5 3 0 0 7 0 0 0 0
+  6 0 0 1 9 5 0 0 0
+  0 9 8 0 0 0 0 6 0
+  8 0 0 0 6 0 0 0 3
+  4 0 0 8 0 3 0 0 1
+  7 0 0 0 2 0 0 0 6
+  0 6 0 0 0 0 2 8 0
+  0 0 0 4 1 9 0 0 5
+  0 0 0 0 8 0 0 7 9
+Output: (the completed board with all cells filled)
 
-TIME COMPLEXITY:  O(9^(empty cells)) worst case, much less with pruning
-SPACE COMPLEXITY: O(81) — the board itself + recursion depth
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

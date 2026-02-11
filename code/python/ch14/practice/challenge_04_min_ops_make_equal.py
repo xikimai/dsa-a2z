@@ -1,19 +1,41 @@
 """
-Solution for Challenge 4: Minimum Operations to Make All Elements Equal
-========================================================================
-Chapter 14: Prefix Sums — The Running Total Trick
+Challenge 4: Minimum Operations to Make All Elements Equal
+===========================================================
+Chapter 14: Prefix Sums — The Power of Pre-computation
 
-APPROACH
+PROBLEM
+-------
+Given an array of integers, find the minimum number of operations to
+make all elements equal. In one operation you can increment or decrement
+any element by 1. The target value must be one of the existing elements.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers.
+
+OUTPUT FORMAT
+-------------
+A single integer — the minimum total operations.
+
+CONSTRAINTS
+-----------
+- 1 <= len(arr) <= 10^5
+- -10^6 <= arr[i] <= 10^6
+
+EXAMPLES
 --------
-Sort the array, then use prefix sums to compute the cost of making
-all elements equal to arr[i] in O(1) per candidate.
-For target arr[i]:
-  left_cost  = i * arr[i] - prefix[i]
-  right_cost = (prefix[n] - prefix[i+1]) - (n - i - 1) * arr[i]
-Try all candidates, take the minimum.
+Input:
+  1 2 3
+Output: 2
 
-TIME COMPLEXITY:  O(n log n) — dominated by sort (O(n) if already sorted)
-SPACE COMPLEXITY: O(n) — prefix array
+Input:
+  1 5
+Output: 4
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

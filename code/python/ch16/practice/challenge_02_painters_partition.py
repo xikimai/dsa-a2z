@@ -1,15 +1,45 @@
 """
-Solution for Challenge 2: Painter's Partition
-==============================================
-Chapter 16: Binary Search Beyond Arrays — Searching on Answers
+Challenge 2: Painter's Partition
+==================================
+Chapter 16: Binary Search Beyond — When the Answer Is the Question
 
-APPROACH
+PROBLEM
+-------
+Given an array of board lengths and k painters, each painter paints
+contiguous boards. Minimize the maximum length any single painter paints.
+If there are more painters than boards, each painter paints at most one board.
+
+INPUT FORMAT
+------------
+First line: space-separated integers (board lengths).
+Second line: a single integer k (number of painters).
+
+OUTPUT FORMAT
+-------------
+A single integer — the minimized maximum section length.
+
+CONSTRAINTS
+-----------
+- 1 <= len(boards) <= 10^5
+- 1 <= boards[i] <= 10^6
+- 1 <= k <= 10^5
+
+EXAMPLES
 --------
-Binary search on answer space [max(boards), sum(boards)]. For each candidate
-max section length, greedily assign boards to painters and count painters needed.
+Input:
+  10 20 30 40
+  2
+Output: 60
 
-TIME COMPLEXITY:  O(n * log(sum(boards)))
-SPACE COMPLEXITY: O(1)
+Input:
+  10 20 30
+  3
+Output: 30
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

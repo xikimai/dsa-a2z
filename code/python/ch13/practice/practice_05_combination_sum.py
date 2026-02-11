@@ -1,16 +1,52 @@
 """
-Solution for Practice 5: Combination Sum
-============================================
-Chapter 13: Bronze Battle Plan — Complete Search & Simulation
+Practice 5: Combination Sum
+==============================
+Chapter 13: Bronze Battle Plan — Putting It All Together
 
-APPROACH
+PROBLEM
+-------
+Given a list of distinct positive integers (candidates) and a target
+integer, find all unique combinations where the candidates sum to the
+target. Each candidate may be used unlimited times. Return combinations
+in sorted order.
+
+INPUT FORMAT
+------------
+First line: space-separated integers (candidates).
+Second line: a single integer (target).
+
+OUTPUT FORMAT
+-------------
+Each combination on its own line as a list.
+
+CONSTRAINTS
+-----------
+- 1 <= len(candidates) <= 30
+- 1 <= candidates[i] <= 200
+- 1 <= target <= 500
+- All candidates are distinct
+
+EXAMPLES
 --------
-Sort candidates. Backtrack: for each candidate (starting from current
-index to avoid duplicates), add it if sum doesn't exceed target. Allow
-reuse by starting from same index.
+Input:
+  2 3 6 7
+  7
+Output:
+  [2, 2, 3]
+  [7]
 
-TIME COMPLEXITY:  O(n^(t/m)) — n candidates, t=target, m=min candidate
-SPACE COMPLEXITY: O(t/m) — recursion depth
+Input:
+  2 3 5
+  8
+Output:
+  [2, 2, 2, 2]
+  [2, 3, 3]
+  [3, 5]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

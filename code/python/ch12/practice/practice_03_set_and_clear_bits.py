@@ -1,15 +1,41 @@
 """
-Solution for Practice 3: Set and Clear Bits
-=============================================
+Practice 3: Set and Clear Bits
+================================
 Chapter 12: Bit Manipulation — The Language of Computers
 
-APPROACH
---------
-Set: OR with (1 << i) ensures the i-th bit is 1.
-Clear: AND with ~(1 << i) ensures the i-th bit is 0.
+PROBLEM
+-------
+Implement two operations on an integer n at bit position i (0-indexed):
+  - SET: Force the i-th bit to 1 and return the result.
+  - CLEAR: Force the i-th bit to 0 and return the result.
 
-TIME COMPLEXITY:  O(1) for both operations
-SPACE COMPLEXITY: O(1)
+INPUT FORMAT
+------------
+A line with an operation ("set" or "clear"), followed by two integers n and i.
+
+OUTPUT FORMAT
+-------------
+A single integer — the result after the operation.
+
+CONSTRAINTS
+-----------
+- 0 <= n <= 10^9
+- 0 <= i <= 30
+
+EXAMPLES
+--------
+Input:
+  set 42 0
+Output: 43
+
+Input:
+  clear 42 1
+Output: 40
+
+INSTRUCTIONS
+------------
+Replace the `pass` in solve_set() and solve_clear() with your solutions.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

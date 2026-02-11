@@ -1,16 +1,41 @@
 """
-Solution for Practice 2: Toggle i-th Bit
-==========================================
+Practice 2: Toggle i-th Bit
+=============================
 Chapter 12: Bit Manipulation — The Language of Computers
 
-APPROACH
---------
-XOR n with (1 << i). XOR toggles the bit:
-  - If bit i is 0, XOR with 1 makes it 1.
-  - If bit i is 1, XOR with 1 makes it 0.
+PROBLEM
+-------
+Given an integer n and a bit position i (0-indexed from the right),
+toggle the i-th bit of n (flip it from 0 to 1 or from 1 to 0) and
+return the result.
 
-TIME COMPLEXITY:  O(1)
-SPACE COMPLEXITY: O(1)
+INPUT FORMAT
+------------
+Two space-separated integers: n and i.
+
+OUTPUT FORMAT
+-------------
+A single integer — the result after toggling the i-th bit.
+
+CONSTRAINTS
+-----------
+- 0 <= n <= 10^9
+- 0 <= i <= 30
+
+EXAMPLES
+--------
+Input:
+  42 0
+Output: 43
+
+Input:
+  42 1
+Output: 40
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

@@ -1,16 +1,45 @@
 """
-Solution for Warmup 5: Check Tic-Tac-Toe Winner
-============================================
-Chapter 13: Bronze Battle Plan — Complete Search & Simulation
+Warmup 5: Check Tic-Tac-Toe Winner
+====================================
+Chapter 13: Bronze Battle Plan — Putting It All Together
 
-APPROACH
+PROBLEM
+-------
+Given a 3x3 tic-tac-toe board, determine the current state of the game.
+Return 'X' if X wins, 'O' if O wins, 'Draw' if no winner and no empty
+cells, or 'Ongoing' if the game is still in progress.
+
+INPUT FORMAT
+------------
+Three lines, each containing three space-separated characters ('X', 'O', or '.').
+
+OUTPUT FORMAT
+-------------
+One of: 'X', 'O', 'Draw', or 'Ongoing'.
+
+CONSTRAINTS
+-----------
+- Board is always 3x3
+- Characters are 'X', 'O', or '.' (empty)
+
+EXAMPLES
 --------
-Check all 8 winning lines (3 rows, 3 columns, 2 diagonals).
-If any line is all X or all O, return the winner.
-If no winner and empty cells remain, return Ongoing. Otherwise Draw.
+Input:
+  X X X
+  O O .
+  . . .
+Output: X
 
-TIME COMPLEXITY:  O(1) — board is always 3x3
-SPACE COMPLEXITY: O(1)
+Input:
+  X O X
+  O X O
+  O X O
+Output: Draw
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

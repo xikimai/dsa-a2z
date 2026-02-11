@@ -1,15 +1,45 @@
 """
-Solution for Challenge 3: Longest Repeating Character Replacement
-==================================================================
-Chapter 15: Two Pointers & Sliding Window — The Caterpillar Method
+Challenge 3: Longest Repeating Character Replacement
+======================================================
+Chapter 15: Two Pointers & Sliding Window — The Dance of Indices
 
-APPROACH
+PROBLEM
+-------
+Given a string of uppercase English letters and an integer k, find the
+length of the longest substring you can obtain by replacing at most k
+characters so that all characters in the substring are the same.
+
+INPUT FORMAT
+------------
+First line: a string of uppercase letters.
+Second line: a single integer k.
+
+OUTPUT FORMAT
+-------------
+A single integer — the length of the longest valid substring.
+
+CONSTRAINTS
+-----------
+- 1 <= len(s) <= 10^5
+- 0 <= k <= len(s)
+- s consists of uppercase English letters
+
+EXAMPLES
 --------
-Sliding window with character frequency tracking. A window is valid
-if (window_size - max_frequency) <= k. When invalid, shrink left.
+Input:
+  ABAB
+  2
+Output: 4
 
-TIME COMPLEXITY:  O(n) — single pass (max_freq tracking is O(1) per step)
-SPACE COMPLEXITY: O(1) — at most 26 characters in frequency array
+Input:
+  AABABBA
+  1
+Output: 4
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

@@ -1,15 +1,45 @@
 """
-Solution for Warmup 3: Search in Rotated Sorted Array
-======================================================
-Chapter 16: Binary Search Beyond Arrays — Searching on Answers
+Warmup 3: Search in Rotated Sorted Array
+==========================================
+Chapter 16: Binary Search Beyond — When the Answer Is the Question
 
-APPROACH
+PROBLEM
+-------
+Given a sorted array that has been rotated at some pivot, search for a
+target value and return its index. Return -1 if not found. All elements
+are distinct.
+
+INPUT FORMAT
+------------
+First line: space-separated integers (rotated sorted array, may be empty).
+Second line: a single integer (the target).
+
+OUTPUT FORMAT
+-------------
+A single integer — the index of the target, or -1.
+
+CONSTRAINTS
+-----------
+- 0 <= len(arr) <= 10^5
+- -10^6 <= arr[i] <= 10^6
+- All elements are distinct
+
+EXAMPLES
 --------
-Modified binary search. At each step, determine which half is sorted,
-then check if target lies in the sorted half.
+Input:
+  4 5 6 7 0 1 2
+  0
+Output: 4
 
-TIME COMPLEXITY:  O(log n)
-SPACE COMPLEXITY: O(1)
+Input:
+  4 5 6 7 0 1 2
+  3
+Output: -1
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

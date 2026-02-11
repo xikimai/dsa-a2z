@@ -1,15 +1,50 @@
 """
-Solution for Warmup 2: Generate All Subsets
-============================================
-Chapter 13: Bronze Battle Plan — Complete Search & Simulation
+Warmup 2: Generate All Subsets
+================================
+Chapter 13: Bronze Battle Plan — Putting It All Together
 
-APPROACH
+PROBLEM
+-------
+Given a list of distinct integers, return all possible subsets sorted
+by length first, then lexicographically within each length group.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers (may be empty).
+
+OUTPUT FORMAT
+-------------
+Each subset on its own line as a list.
+
+CONSTRAINTS
+-----------
+- 0 <= len(nums) <= 10
+- -100 <= nums[i] <= 100
+- All elements are distinct
+
+EXAMPLES
 --------
-Recursion: for each element, include or exclude.
-Sort inputs and results for deterministic output.
+Input:
+  1 2 3
+Output:
+  []
+  [1]
+  [2]
+  [3]
+  [1, 2]
+  [1, 3]
+  [2, 3]
+  [1, 2, 3]
 
-TIME COMPLEXITY:  O(2^n * n)
-SPACE COMPLEXITY: O(n) — recursion depth
+Input:
+  (empty)
+Output:
+  []
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

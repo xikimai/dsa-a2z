@@ -1,46 +1,51 @@
 """
-Solution for Challenge 3: Search in Rotated Sorted Array II
-============================================
+Challenge 3: Search in Rotated Sorted Array with Duplicates
+==============================
 Chapter 9: Finding Needles — The Power of Searching
 
-APPROACH
---------
-Same idea as searching in a rotated sorted array without duplicates,
-but with one extra case: when arr[lo] == arr[mid] == arr[hi], we can't
-determine which half is sorted. In that case, shrink both ends
-(lo++, hi--) and try again. This makes worst case O(n), but average
-case is still O(log n).
+PROBLEM
+-------
+You are given a sorted array that has been rotated at some unknown
+pivot, and it MAY contain duplicate values. Given a target value,
+return True if the target exists in the array, or False otherwise.
 
-TIME COMPLEXITY:  O(log n) average, O(n) worst case
-SPACE COMPLEXITY: O(1)
+INPUT FORMAT
+------------
+First line: space-separated integers (a rotated sorted array with possible duplicates).
+Second line: a single integer (the target).
+
+OUTPUT FORMAT
+-------------
+True or False.
+
+CONSTRAINTS
+-----------
+- 1 <= len(arr) <= 10^5
+- -10^9 <= arr[i] <= 10^9
+- The array may contain duplicates.
+
+EXAMPLES
+--------
+Input:
+  2 5 6 0 0 1 2
+  0
+Output: True
+
+Input:
+  2 5 6 0 0 1 2
+  3
+Output: False
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 
 def solve(arr: list[int], target: int) -> bool:
     """Search for target in a rotated sorted array with duplicates."""
-    lo, hi = 0, len(arr) - 1
-    while lo <= hi:
-        mid = lo + (hi - lo) // 2
-        if arr[mid] == target:
-            return True
-
-        # Can't determine which half is sorted
-        if arr[lo] == arr[mid] == arr[hi]:
-            lo += 1
-            hi -= 1
-        # Left half is sorted
-        elif arr[lo] <= arr[mid]:
-            if arr[lo] <= target < arr[mid]:
-                hi = mid - 1
-            else:
-                lo = mid + 1
-        # Right half is sorted
-        else:
-            if arr[mid] < target <= arr[hi]:
-                lo = mid + 1
-            else:
-                hi = mid - 1
-    return False
+    pass  # TODO: Replace this with your solution
 
 
 # ── Do not change anything below this line ──────────────────────────

@@ -1,15 +1,51 @@
 """
-Solution for Practice 1: Subsets Using Bitmasks
-============================================
-Chapter 13: Bronze Battle Plan — Complete Search & Simulation
+Practice 1: Subsets Using Bitmasks
+====================================
+Chapter 13: Bronze Battle Plan — Putting It All Together
 
-APPROACH
+PROBLEM
+-------
+Given a list of distinct integers, generate all subsets using bitmask
+enumeration. Return subsets sorted by length first, then lexicographically.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers (may be empty).
+
+OUTPUT FORMAT
+-------------
+Each subset on its own line as a list.
+
+CONSTRAINTS
+-----------
+- 0 <= len(nums) <= 15
+- -100 <= nums[i] <= 100
+- All elements are distinct
+
+EXAMPLES
 --------
-For each mask from 0 to 2^n - 1, check each bit. If bit i is set,
-include nums[i] in the subset.
+Input:
+  1 2 3
+Output:
+  []
+  [1]
+  [2]
+  [3]
+  [1, 2]
+  [1, 3]
+  [2, 3]
+  [1, 2, 3]
 
-TIME COMPLEXITY:  O(2^n * n)
-SPACE COMPLEXITY: O(2^n * n) — storing all subsets
+Input:
+  5
+Output:
+  []
+  [5]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

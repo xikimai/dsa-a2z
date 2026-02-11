@@ -746,6 +746,41 @@ int solve(vector<int>& boards, int k) {
 
 ---
 
+## Five-Lens Framework: Koko Eating Bananas
+
+Let us apply the Five-Lens Framework to the Koko Eating Bananas problem. There are n piles of bananas, and Koko eats at speed k bananas per hour (one pile at a time). A guard returns in h hours. Find the minimum eating speed k so Koko finishes everything in time.
+
+### Lens 1: Constraints
+
+The number of piles can be up to 10,000, and pile sizes can be up to 1 billion. The answer k is somewhere between 1 and the size of the largest pile. That is a huge search space -- up to a billion possible speeds to check.
+
+### Lens 2: Brute Force
+
+Try every speed from 1 to max(piles). For each speed, compute the total hours needed (sum of ceiling(pile/k) for each pile). Return the first speed that finishes within h hours. This takes O(max_pile * n) time, which can be 10^13 operations. Way too slow.
+
+### Lens 3: Pattern
+
+This is a "binary search on the answer" problem. The key insight: if speed k works (finishes in time), then speed k+1 also works (eating faster can only help). This monotonicity means the feasibility answers look like NNNNYYYY -- all the "no" answers on the left, all the "yes" answers on the right. Binary search finds the boundary.
+
+### Lens 4: Optimization
+
+Binary search over the answer space [1, max(piles)]. For each candidate speed mid, check feasibility in O(n) by summing the hours needed. Binary search takes O(log(max_pile)) iterations. Total: O(n * log(max_pile)), which is about 10,000 * 30 = 300,000 operations. Lightning fast.
+
+### Lens 5: Proof
+
+Here is why binary search gives the correct minimum. The feasibility function is monotonic: if we can finish at speed k, we can certainly finish at speed k+1 (eating faster never hurts). This means there is a clean boundary -- some minimum speed k* where all speeds below it fail and all speeds at or above it succeed. Binary search finds exactly this boundary by halving the search range each step, and it cannot miss k* because it never skips over the boundary.
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Decision Flowchart
 
 When should you use binary search on answers? Follow this flowchart:

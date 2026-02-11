@@ -1,30 +1,49 @@
 """
-Solution for Practice 5: Find Minimum in Rotated Sorted Array
-============================================
+Practice 5: Find Minimum in Rotated Sorted Array
+==============================
 Chapter 9: Finding Needles — The Power of Searching
 
-APPROACH
---------
-Binary search comparing arr[mid] with arr[hi].
-- If arr[mid] > arr[hi], the minimum is in the right half (lo = mid + 1).
-- Otherwise, the minimum is at mid or to the left (hi = mid).
-When lo == hi, we've found the minimum.
+PROBLEM
+-------
+You are given a sorted array that has been rotated at some unknown
+pivot (e.g., [3, 4, 5, 1, 2] was originally [1, 2, 3, 4, 5]).
+Find and return the minimum element. The array contains no duplicates.
+Your solution must run in O(log n) time.
 
-TIME COMPLEXITY:  O(log n)
-SPACE COMPLEXITY: O(1)
+INPUT FORMAT
+------------
+A single line of space-separated integers (a rotated sorted array).
+
+OUTPUT FORMAT
+-------------
+A single integer: the minimum value in the array.
+
+CONSTRAINTS
+-----------
+- 1 <= len(arr) <= 10^5
+- -10^9 <= arr[i] <= 10^9
+- All values are distinct.
+
+EXAMPLES
+--------
+Input:
+  3 4 5 1 2
+Output: 1
+
+Input:
+  4 5 6 7 0 1 2
+Output: 0
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 
 def solve(arr: list[int]) -> int:
     """Return the minimum value in a rotated sorted array."""
-    lo, hi = 0, len(arr) - 1
-    while lo < hi:
-        mid = lo + (hi - lo) // 2
-        if arr[mid] > arr[hi]:
-            lo = mid + 1
-        else:
-            hi = mid
-    return arr[lo]
+    pass  # TODO: Replace this with your solution
 
 
 # ── Do not change anything below this line ──────────────────────────

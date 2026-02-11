@@ -1,17 +1,42 @@
 """
-Solution for Challenge 2: Two Numbers Appearing Odd Times
-==========================================================
+Challenge 2: Two Numbers Appearing Odd Times
+==============================================
 Chapter 12: Bit Manipulation — The Language of Computers
 
-APPROACH
---------
-1. XOR all elements -> xor_all = a ^ b
-2. Find the lowest set bit of xor_all (this bit differs between a and b)
-3. Partition elements by this bit, XOR each group to isolate a and b
-4. Return sorted.
+PROBLEM
+-------
+Given an array of integers where every element appears an even number of
+times except for exactly two elements (which appear an odd number of times),
+find those two elements. Return them in sorted order.
 
-TIME COMPLEXITY:  O(n)
-SPACE COMPLEXITY: O(1)
+INPUT FORMAT
+------------
+A single line of space-separated integers.
+
+OUTPUT FORMAT
+-------------
+A sorted list of the two odd-occurring elements.
+
+CONSTRAINTS
+-----------
+- 2 <= len(nums) <= 10^5
+- -10^6 <= nums[i] <= 10^6
+- Exactly two distinct elements appear an odd number of times
+
+EXAMPLES
+--------
+Input:
+  2 4 7 9 2 4
+Output: [7, 9]
+
+Input:
+  1 2 3 2 1 4
+Output: [3, 4]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

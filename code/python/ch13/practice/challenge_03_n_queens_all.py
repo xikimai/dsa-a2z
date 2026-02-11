@@ -1,15 +1,50 @@
 """
-Solution for Challenge 3: N-Queens All Solutions
-============================================
-Chapter 13: Bronze Battle Plan — Complete Search & Simulation
+Challenge 3: N-Queens All Solutions
+=====================================
+Chapter 13: Bronze Battle Plan — Putting It All Together
 
-APPROACH
+PROBLEM
+-------
+Given an integer n, return all distinct solutions to the N-Queens puzzle.
+Each solution is a list of strings where 'Q' represents a queen and '.'
+represents an empty space. Return solutions in sorted order.
+
+INPUT FORMAT
+------------
+A single positive integer n.
+
+OUTPUT FORMAT
+-------------
+Each solution as n lines of the board, with a blank line between solutions.
+
+CONSTRAINTS
+-----------
+- 1 <= n <= 10
+
+EXAMPLES
 --------
-Extend N-Queens count: when a complete placement is found, build
-the board string representation and store it.
+Input:
+  4
+Output:
+  .Q..
+  ...Q
+  Q...
+  ..Q.
 
-TIME COMPLEXITY:  O(n!)
-SPACE COMPLEXITY: O(n^2) — storing solutions
+  ..Q.
+  Q...
+  ...Q
+  .Q..
+
+Input:
+  1
+Output:
+  Q
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

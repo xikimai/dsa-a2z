@@ -861,6 +861,41 @@ void backtrackSum(vector<int>& nums, int target, int index, int sum,
 
 ---
 
+## Five-Lens Framework: Complete Search (Subset Sum)
+
+Let us apply the Five-Lens Framework to a classic Bronze-level problem: given an array of n positive integers and a target sum, determine whether any subset of the array sums to exactly the target.
+
+### Lens 1: Constraints
+
+In USACO Bronze, n is typically small -- at most 20. With n = 20, there are 2^20 = about 1 million subsets. That is well within the time limit (usually 4 seconds). This is the signal that complete search is the intended approach. Do not overthink it.
+
+### Lens 2: Brute Force
+
+Generate every possible subset and check if its sum equals the target. With n = 20, that is 2^20 subsets, and checking each subset's sum takes O(n) time. Total: O(n * 2^n), which is about 20 million operations. Fast enough. For n = 10, you could even try all permutations (10! = 3.6 million), but subsets are the right framing here.
+
+### Lens 3: Pattern
+
+There are two clean ways to enumerate all subsets. First, bitmask iteration: loop from 0 to 2^n - 1, where each integer represents a subset (bit i set means include element i). Second, recursive backtracking: for each element, choose to include or exclude it, then recurse. Both generate the same subsets, but bitmasks are simpler to code and harder to get wrong.
+
+### Lens 4: Optimization
+
+**Pruning** makes brute force dramatically faster in practice. Sort the array first. If the current sum already exceeds the target, stop exploring that branch. If the current sum plus all remaining elements is less than the target, stop too. These two checks can eliminate huge portions of the search tree, turning a million-subset search into just a few hundred checks for many inputs.
+
+### Lens 5: Proof
+
+Why does complete search always give the correct answer? Because it checks EVERY possible subset. If a valid subset exists, it will be found. If no valid subset exists, every candidate will be rejected. There is no possibility of missing a solution or producing a false positive. The only question is whether we can afford to check all subsets -- and the constraints guarantee we can.
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Thinking Flowchart: "Is This a Complete Search Problem?"
 
 ```mermaid

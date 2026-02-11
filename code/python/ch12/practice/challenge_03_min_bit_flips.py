@@ -1,15 +1,39 @@
 """
-Solution for Challenge 3: Minimum Bit Flips
-=============================================
+Challenge 3: Minimum Bit Flips
+================================
 Chapter 12: Bit Manipulation — The Language of Computers
 
-APPROACH
---------
-XOR start and goal. The set bits in the result are exactly the bits
-that differ. Count them using Brian Kernighan's algorithm.
+PROBLEM
+-------
+Given two non-negative integers start and goal, return the minimum number
+of bit flips needed to convert start to goal.
 
-TIME COMPLEXITY:  O(k) where k = number of differing bits
-SPACE COMPLEXITY: O(1)
+INPUT FORMAT
+------------
+Two space-separated non-negative integers: start and goal.
+
+OUTPUT FORMAT
+-------------
+A single integer — the number of bits that differ.
+
+CONSTRAINTS
+-----------
+- 0 <= start, goal <= 10^9
+
+EXAMPLES
+--------
+Input:
+  10 7
+Output: 3
+
+Input:
+  3 4
+Output: 3
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

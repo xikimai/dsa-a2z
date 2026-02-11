@@ -1,16 +1,44 @@
 """
-Solution for Practice 4: Subarray Sum Equals K (Sliding Window)
-================================================================
-Chapter 15: Two Pointers & Sliding Window — The Caterpillar Method
+Practice 4: Subarray Sum Equals K (Sliding Window)
+====================================================
+Chapter 15: Two Pointers & Sliding Window — The Dance of Indices
 
-APPROACH
+PROBLEM
+-------
+Given an array of positive integers and a target sum k, count the number
+of contiguous subarrays whose sum equals exactly k.
+
+INPUT FORMAT
+------------
+First line: space-separated positive integers.
+Second line: a single integer k.
+
+OUTPUT FORMAT
+-------------
+A single integer — the count of subarrays with sum equal to k.
+
+CONSTRAINTS
+-----------
+- 1 <= len(arr) <= 10^5
+- 1 <= arr[i] <= 10^4
+- 1 <= k <= 10^9
+
+EXAMPLES
 --------
-Variable sliding window for positive integers. Expand right to increase
-sum. When sum exceeds k, shrink left. When sum equals k, count it and
-shrink to continue searching.
+Input:
+  1 1 1
+  2
+Output: 2
 
-TIME COMPLEXITY:  O(n) — each element enters/leaves window at most once
-SPACE COMPLEXITY: O(1) — constant extra space
+Input:
+  1 2 3
+  3
+Output: 2
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

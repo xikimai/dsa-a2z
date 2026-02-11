@@ -1,16 +1,41 @@
 """
-Solution for Challenge 1: Three Sum
-=====================================
-Chapter 15: Two Pointers & Sliding Window — The Caterpillar Method
+Challenge 1: Three Sum
+========================
+Chapter 15: Two Pointers & Sliding Window — The Dance of Indices
 
-APPROACH
+PROBLEM
+-------
+Given an array of integers, find all unique triplets [a, b, c] such
+that a + b + c = 0. Return the list of triplets sorted, with no
+duplicate triplets.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers (may be empty).
+
+OUTPUT FORMAT
+-------------
+A list of triplets.
+
+CONSTRAINTS
+-----------
+- 3 <= len(nums) <= 3000
+- -10^5 <= nums[i] <= 10^5
+
+EXAMPLES
 --------
-Sort array. For each element nums[i], use two pointers on the
-remaining elements to find pairs summing to -nums[i]. Skip
-duplicates at all three levels.
+Input:
+  -1 0 1 2 -1 -4
+Output: [[-1, -1, 2], [-1, 0, 1]]
 
-TIME COMPLEXITY:  O(n^2) — outer loop O(n) * inner two-pointer O(n)
-SPACE COMPLEXITY: O(1) extra beyond sorting and result list
+Input:
+  0 0 0
+Output: [[0, 0, 0]]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

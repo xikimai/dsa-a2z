@@ -666,6 +666,41 @@ When you need guaranteed O(log n) or need keys in sorted order:
 
 ---
 
+## Five-Lens Framework: Two Sum
+
+Let us apply the Five-Lens Framework to the Two Sum problem: given an array of integers and a target sum, find two elements that add up to the target.
+
+### Lens 1: Constraints
+
+The array can have up to n = 100,000 elements. We need to find a pair (i, j) where arr[i] + arr[j] = target. An O(n^2) solution checks 10 billion pairs -- too slow. We need O(n) or O(n log n).
+
+### Lens 2: Brute Force
+
+Check every pair: for each element arr[i], scan every other element arr[j] to see if they sum to the target. That is two nested loops, O(n^2) time. Simple to code, but it collapses for large n.
+
+### Lens 3: Pattern
+
+The key insight is the **complement technique**. For each element x, the partner we need is `target - x`. Instead of scanning the array for this partner, we can ask a hash map: "Have I already seen target - x?" If yes, we are done. If no, record x and move on. This transforms a search problem into a lookup problem.
+
+### Lens 4: Optimization
+
+With a hash map, each lookup and insert is O(1) on average. We make one pass through the array, doing one hash map operation per element. Total: O(n) time, O(n) space. This is a massive improvement over O(n^2) -- for n = 100,000, we go from 10 billion operations to 100,000.
+
+### Lens 5: Proof
+
+Why does a single pass work? We process elements left to right. When we reach element arr[i], we check if its complement (target - arr[i]) is in the map. The map contains all elements we have seen so far (indices 0 through i-1). If the complement is there, we found a valid pair. If we finish the array without finding a pair, no valid pair exists. This works because for any valid pair (i, j) with i < j, when we process arr[j], arr[i] is already in the map.
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Flowcharts
 
 ### Thinking Flowchart: "Should I Use Hashing?"

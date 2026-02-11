@@ -698,6 +698,41 @@ int findPeak(vector<int>& arr) {
 
 ---
 
+## Five-Lens Framework: Binary Search
+
+Let us apply the Five-Lens Framework to the classic problem: given a sorted array of n elements, determine whether a target value exists in it (and if so, where).
+
+### Lens 1: Constraints
+
+Arrays can be huge -- up to n = 10^9 elements in some problems. Even O(n) linear search is too slow at that scale. We need O(log n) or better. The critical requirement is that the data must be sorted (or have a monotonic property we can exploit).
+
+### Lens 2: Brute Force
+
+Linear search: scan every element from left to right until you find the target or reach the end. That is O(n) time. For n = 1 billion, that is 1 billion comparisons. If you need to do many searches, this adds up fast.
+
+### Lens 3: Pattern
+
+Since the array is sorted, the middle element tells you which HALF the target must be in. If the middle is too small, the target is in the right half. If too big, the left half. Each comparison eliminates half the remaining elements. This "halving" pattern means the search space shrinks exponentially fast.
+
+### Lens 4: Optimization
+
+Binary search runs in O(log n) time and O(1) space. For n = 1 billion, that is at most 30 comparisons. The lower bound and upper bound templates generalize binary search to find boundaries, not just exact matches. Beyond arrays, binary search works on any monotonic predicate -- you can search the space of possible answers, not just array indices.
+
+### Lens 5: Proof
+
+Here is why binary search always finds the target if it exists. At every step, binary search maintains the invariant that the target (if present) is within the range [lo, hi]. When arr[mid] < target, we set lo = mid + 1. Since the array is sorted, every element at index <= mid is also less than target, so the target cannot be there. The same logic applies when arr[mid] > target. Since the target is never eliminated from [lo, hi], the loop must eventually check the target's position and return it.
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Thinking Flowchart
 
 ```mermaid

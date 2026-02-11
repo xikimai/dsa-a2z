@@ -1,15 +1,46 @@
 """
-Solution for Practice 5: Minimum Pages Allocation
-===================================================
-Chapter 16: Binary Search Beyond Arrays — Searching on Answers
+Practice 5: Minimum Pages Allocation
+======================================
+Chapter 16: Binary Search Beyond — When the Answer Is the Question
 
-APPROACH
+PROBLEM
+-------
+Given an array of book page counts and a number of students, allocate
+books to students such that: each student gets contiguous books, every
+book is assigned, and the maximum pages any student reads is minimized.
+Return -1 if there are more students than books.
+
+INPUT FORMAT
+------------
+First line: space-separated integers (page counts).
+Second line: a single integer (number of students).
+
+OUTPUT FORMAT
+-------------
+A single integer — the minimized maximum pages, or -1.
+
+CONSTRAINTS
+-----------
+- 1 <= len(pages) <= 10^5
+- 1 <= pages[i] <= 10^6
+- 1 <= students <= 10^5
+
+EXAMPLES
 --------
-Binary search on answer space [max(pages), sum(pages)]. For each candidate
-max-pages, greedily assign books to students and count students needed.
+Input:
+  12 34 67 90
+  2
+Output: 113
 
-TIME COMPLEXITY:  O(n * log(sum(pages)))
-SPACE COMPLEXITY: O(1)
+Input:
+  10 20 30
+  3
+Output: 30
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

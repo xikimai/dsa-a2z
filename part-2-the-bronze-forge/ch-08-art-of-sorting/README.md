@@ -804,6 +804,41 @@ He doesn't mean "always sort." He means sorting is the first thing to *consider*
 
 ---
 
+## Five-Lens Framework: Sorting an Array
+
+Let us apply the Five-Lens Framework to the core problem of this chapter: sorting an array of n integers into non-decreasing order.
+
+### Lens 1: Constraints
+
+In USACO and competitive programming, n can be up to 100,000 or even 1,000,000. At n = 100,000, an O(n^2) algorithm does 10 billion operations and will time out. We need O(n log n) or better. For small arrays (n <= 50), even O(n^2) is fine, which is why built-in sorts switch to insertion sort for tiny subarrays.
+
+### Lens 2: Brute Force
+
+The simplest sorts -- selection sort and bubble sort -- compare all pairs of elements. That is O(n^2) comparisons. For n = 1,000, that is 1 million comparisons (fast enough). For n = 100,000, it is 10 billion (way too slow). We need to break the n^2 barrier.
+
+### Lens 3: Pattern
+
+The key insight is **divide and conquer**: split the array in half, sort each half recursively, and merge the two sorted halves. Merging two sorted arrays of total size n takes O(n) work. Since we split log n times and do O(n) work at each level, the total is O(n log n). This is merge sort.
+
+### Lens 4: Optimization
+
+Merge sort gives us O(n log n) time with O(n) extra space. Quick sort achieves O(n log n) average time with only O(log n) stack space (in-place). Built-in sorts like Python's TimSort combine merge sort with insertion sort for the best practical performance. The O(n log n) bound is provably optimal for comparison-based sorting.
+
+### Lens 5: Proof
+
+Why is merge sort correct? We prove it by induction. Base case: an array of size 0 or 1 is already sorted. Inductive step: if merge sort correctly sorts arrays smaller than n, then for an array of size n, the two halves are correctly sorted (by the inductive hypothesis), and the merge step combines two sorted arrays into one sorted array by always picking the smaller front element. Therefore the final result is sorted.
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Thinking Flowchart
 
 ```mermaid

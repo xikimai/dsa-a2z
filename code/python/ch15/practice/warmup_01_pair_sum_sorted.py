@@ -1,15 +1,45 @@
 """
-Solution for Warmup 1: Pair Sum in Sorted Array
-=================================================
-Chapter 15: Two Pointers & Sliding Window — The Caterpillar Method
+Warmup 1: Pair Sum in Sorted Array
+====================================
+Chapter 15: Two Pointers & Sliding Window — The Dance of Indices
 
-APPROACH
+PROBLEM
+-------
+Given a sorted array of integers and a target sum, find a pair of
+elements that add up to the target. Return the pair [a, b] with the
+smallest a. If no pair exists, return [-1, -1].
+
+INPUT FORMAT
+------------
+First line: space-separated integers (sorted array, may be empty).
+Second line: a single integer (target sum).
+
+OUTPUT FORMAT
+-------------
+A list of two integers, or [-1, -1].
+
+CONSTRAINTS
+-----------
+- 0 <= len(arr) <= 10^5
+- -10^6 <= arr[i] <= 10^6
+- Array is sorted in non-decreasing order
+
+EXAMPLES
 --------
-Use converging two pointers from both ends of the sorted array.
-If sum < target, move left pointer right. If sum > target, move right left.
+Input:
+  1 3 5 8 12 15
+  13
+Output: [1, 12]
 
-TIME COMPLEXITY:  O(n) — each pointer moves at most n steps total
-SPACE COMPLEXITY: O(1) — only pointer variables
+Input:
+  1 2 3 4 5
+  10
+Output: [-1, -1]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

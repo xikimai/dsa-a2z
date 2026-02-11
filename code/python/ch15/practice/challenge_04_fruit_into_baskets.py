@@ -1,16 +1,43 @@
 """
-Solution for Challenge 4: Fruit Into Baskets (Max Two Distinct Types)
-======================================================================
-Chapter 15: Two Pointers & Sliding Window — The Caterpillar Method
+Challenge 4: Fruit Into Baskets (Max Two Distinct Types)
+=========================================================
+Chapter 15: Two Pointers & Sliding Window — The Dance of Indices
 
-APPROACH
+PROBLEM
+-------
+You have a row of fruit trees, each bearing a type of fruit (integer).
+You have two baskets, and each basket can hold only one type of fruit.
+Starting from any tree, pick fruits from consecutive trees. You stop
+when you encounter a third type. Return the maximum number of fruits
+you can collect.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers (fruit types).
+
+OUTPUT FORMAT
+-------------
+A single integer — the maximum number of fruits collectible.
+
+CONSTRAINTS
+-----------
+- 1 <= len(fruits) <= 10^5
+- 0 <= fruits[i] <= 10^5
+
+EXAMPLES
 --------
-Sliding window with hash map tracking fruit type counts. When more
-than 2 distinct types are in the window, shrink from left until
-we're back to at most 2.
+Input:
+  1 2 1
+Output: 3
 
-TIME COMPLEXITY:  O(n) — each element enters/leaves window once
-SPACE COMPLEXITY: O(1) — at most 3 entries in the hash map
+Input:
+  0 1 2 2
+Output: 3
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

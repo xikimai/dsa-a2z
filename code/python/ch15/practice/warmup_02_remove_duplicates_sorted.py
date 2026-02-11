@@ -1,15 +1,41 @@
 """
-Solution for Warmup 2: Remove Duplicates from Sorted Array
-============================================================
-Chapter 15: Two Pointers & Sliding Window — The Caterpillar Method
+Warmup 2: Remove Duplicates from Sorted Array
+================================================
+Chapter 15: Two Pointers & Sliding Window — The Dance of Indices
 
-APPROACH
+PROBLEM
+-------
+Given a sorted array of integers, remove duplicates in-place and return
+the resulting array with each element appearing only once.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers (sorted, may be empty).
+
+OUTPUT FORMAT
+-------------
+The de-duplicated array as a list.
+
+CONSTRAINTS
+-----------
+- 0 <= len(arr) <= 10^5
+- -10^6 <= arr[i] <= 10^6
+- Array is sorted in non-decreasing order
+
+EXAMPLES
 --------
-Use slow/fast pointers. Slow pointer marks where to write.
-Fast pointer scans; when a new value is found, write it at slow.
+Input:
+  1 1 2
+Output: [1, 2]
 
-TIME COMPLEXITY:  O(n) — single pass
-SPACE COMPLEXITY: O(1) — in-place (we return a slice)
+Input:
+  0 0 1 1 1 2 2 3 3 4
+Output: [0, 1, 2, 3, 4]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

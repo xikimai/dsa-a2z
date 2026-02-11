@@ -1,15 +1,42 @@
 """
-Solution for Warmup 4: Peak Element in Array
-=============================================
-Chapter 16: Binary Search Beyond Arrays — Searching on Answers
+Warmup 4: Peak Element in Array
+==================================
+Chapter 16: Binary Search Beyond — When the Answer Is the Question
 
-APPROACH
+PROBLEM
+-------
+Given an array of integers, find any peak element and return its index.
+A peak element is strictly greater than its neighbors. For boundary
+elements, only the one existing neighbor matters.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers (may be empty).
+
+OUTPUT FORMAT
+-------------
+A single integer — the index of any peak element.
+
+CONSTRAINTS
+-----------
+- 1 <= len(arr) <= 10^5
+- -10^6 <= arr[i] <= 10^6
+- arr[i] != arr[i+1] for all valid i (no adjacent duplicates)
+
+EXAMPLES
 --------
-Binary search: if mid element is less than its right neighbor,
-a peak exists on the right half; otherwise on the left half (including mid).
+Input:
+  1 2 3 1
+Output: 2
 
-TIME COMPLEXITY:  O(log n)
-SPACE COMPLEXITY: O(1)
+Input:
+  1 2 1 3 5 6 4
+Output: 1 (or 5, any valid peak index)
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

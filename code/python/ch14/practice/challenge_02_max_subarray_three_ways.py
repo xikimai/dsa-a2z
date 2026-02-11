@@ -1,16 +1,42 @@
 """
-Solution for Challenge 2: Maximum Subarray Sum Three Ways
-==========================================================
-Chapter 14: Prefix Sums — The Running Total Trick
+Challenge 2: Maximum Subarray Sum Three Ways
+==============================================
+Chapter 14: Prefix Sums — The Power of Pre-computation
 
-APPROACH
+PROBLEM
+-------
+Find the maximum subarray sum using three different approaches:
+  1. Brute force: try every subarray, sum each one (O(n^3)).
+  2. Prefix sum: precompute prefix sums, try all (l, r) pairs (O(n^2)).
+  3. Kadane's algorithm: single pass extend-or-restart (O(n)).
+
+INPUT FORMAT
+------------
+A single line of space-separated integers.
+
+OUTPUT FORMAT
+-------------
+A single line: brute=<answer> prefix=<answer> kadane=<answer>
+
+CONSTRAINTS
+-----------
+- 1 <= len(arr) <= 1000 (brute force limits)
+- -10^6 <= arr[i] <= 10^6
+
+EXAMPLES
 --------
-Three methods with decreasing time complexity.
+Input:
+  -2 1 -3 4 -1 2 1 -5 4
+Output: brute=6 prefix=6 kadane=6
 
-TIME/SPACE:
-  solve_brute:  O(n^3) / O(1)
-  solve_prefix: O(n^2) / O(n)
-  solve_kadane: O(n)   / O(1)
+Input:
+  -5 -3 -1 -4
+Output: brute=-1 prefix=-1 kadane=-1
+
+INSTRUCTIONS
+------------
+Replace the `pass` in solve_brute(), solve_prefix(), and solve_kadane() with your solutions.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

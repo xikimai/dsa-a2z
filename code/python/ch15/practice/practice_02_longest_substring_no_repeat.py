@@ -1,15 +1,40 @@
 """
-Solution for Practice 2: Longest Substring Without Repeating Characters
-========================================================================
-Chapter 15: Two Pointers & Sliding Window — The Caterpillar Method
+Practice 2: Longest Substring Without Repeating Characters
+============================================================
+Chapter 15: Two Pointers & Sliding Window — The Dance of Indices
 
-APPROACH
+PROBLEM
+-------
+Given a string, find the length of the longest substring that contains
+no repeating characters.
+
+INPUT FORMAT
+------------
+A single string.
+
+OUTPUT FORMAT
+-------------
+A single integer — the length of the longest non-repeating substring.
+
+CONSTRAINTS
+-----------
+- 0 <= len(s) <= 5 * 10^4
+- s consists of English letters, digits, symbols, and spaces
+
+EXAMPLES
 --------
-Sliding window with hash map tracking each character's most recent index.
-When a repeat is found within the window, jump left past the duplicate.
+Input:
+  abcabcbb
+Output: 3
 
-TIME COMPLEXITY:  O(n) — each character visited once by right pointer
-SPACE COMPLEXITY: O(min(n, alphabet_size)) — hash map entries
+Input:
+  bbbbb
+Output: 1
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

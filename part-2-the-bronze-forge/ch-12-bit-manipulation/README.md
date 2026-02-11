@@ -920,6 +920,41 @@ vector<vector<int>> allSubsets(vector<int>& elements) {
 
 ---
 
+## Five-Lens Framework: Single Number (XOR)
+
+Let us apply the Five-Lens Framework to the Single Number problem: given an array where every element appears exactly twice except one, find the unique element.
+
+### Lens 1: Constraints
+
+The array can have up to n = 100,000 elements. We want to find the one element that appears only once. Ideally we do this in O(n) time. Bonus challenge: can we use O(1) extra space, without a hash map?
+
+### Lens 2: Brute Force
+
+For each element, count how many times it appears by scanning the entire array. Return the element with count 1. That is O(n^2) time. Alternatively, sort the array in O(n log n) and check adjacent pairs -- the element without a matching neighbor is the answer. Better, but not optimal.
+
+### Lens 3: Pattern
+
+The key insight comes from the properties of XOR: a ^ a = 0 (anything XORed with itself cancels out) and a ^ 0 = a (anything XORed with zero is itself). If we XOR all elements together, every pair cancels to zero, and only the unique element survives. This is because XOR is commutative and associative, so the order does not matter.
+
+### Lens 4: Optimization
+
+XOR all elements in a single pass: O(n) time, O(1) space. No sorting, no hash map, no extra memory -- just one variable accumulating XORs. This is provably optimal: you must read every element at least once (O(n) lower bound), and you cannot use less than O(1) space. The XOR solution hits both bounds perfectly.
+
+### Lens 5: Proof
+
+Let the array contain elements a1, a2, ..., an. Every element appears twice except the unique element u. XOR is commutative and associative, so we can rearrange: (x ^ x) ^ (y ^ y) ^ ... ^ u = 0 ^ 0 ^ ... ^ u = u. Each pair XORs to 0, and the accumulated 0s XOR with u gives u. Therefore the result is exactly the unique element.
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Flowcharts
 
 ### Thinking Flowchart: "When to Use Bit Manipulation?"

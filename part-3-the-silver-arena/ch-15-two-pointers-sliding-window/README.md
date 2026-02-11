@@ -974,6 +974,41 @@ int trapWater(vector<int>& heights) {
 
 ---
 
+## Five-Lens Framework: Maximum Sum of Subarray of Size K
+
+Let us apply the Five-Lens Framework to the Fixed Sliding Window problem. Given an array of numbers and a window size k, find the maximum sum of any k consecutive elements.
+
+### Lens 1: Constraints
+
+The array can have up to 100,000 elements and k can be up to n. We need to check every window of size k and find the one with the largest sum. With n up to 100,000, anything worse than O(n) per query will be tight.
+
+### Lens 2: Brute Force
+
+For each starting position i, sum the k elements from i to i+k-1. There are about n-k+1 starting positions, and each sum takes O(k) work. Total: O(n * k). When both n and k are large, this can reach 10 billion operations.
+
+### Lens 3: Pattern
+
+This fits the "sliding window" pattern. Notice that consecutive windows overlap in k-1 elements. When you slide the window one position right, only one element leaves (the leftmost) and one enters (the new rightmost). So you do not need to re-sum the entire window -- just update the running total.
+
+### Lens 4: Optimization
+
+Compute the sum of the first window in O(k). Then for each slide, subtract the element that leaves and add the element that enters -- O(1) per slide. Track the maximum sum seen. Total: O(n) time, O(1) extra space. That handles even the largest inputs easily.
+
+### Lens 5: Proof
+
+Here is why we never miss the answer. Every possible window of size k has a unique starting position from 0 to n-k. Our loop visits every starting position exactly once, computing the correct sum at each step (because adding the new element and removing the old one maintains the exact sum of the current window). Since we track the maximum across all windows, we are guaranteed to find the best one.
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Thinking Flowchart: "Is This a Two-Pointer / Sliding Window Problem?"
 
 ```mermaid

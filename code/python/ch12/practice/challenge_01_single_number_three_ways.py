@@ -1,11 +1,51 @@
 """
-Solution for Challenge 1: Single Number — Three Ways
-======================================================
+Challenge 1: Single Number — Three Ways
+=========================================
 Chapter 12: Bit Manipulation — The Language of Computers
 
-APPROACH 1 (sort): Sort array, scan pairs. O(n log n) time, O(1) space.
-APPROACH 2 (hash): Frequency map, find count==1. O(n) time, O(n) space.
-APPROACH 3 (xor): XOR all. Pairs cancel. O(n) time, O(1) space.
+PROBLEM
+-------
+Given a non-empty array of integers where every element appears exactly
+twice except for one, find that single element using THREE different
+approaches: sorting, hashing, and XOR.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers.
+
+OUTPUT FORMAT
+-------------
+Three lines, each showing the result from one approach:
+  Sort: <answer>
+  Hash: <answer>
+  XOR:  <answer>
+
+CONSTRAINTS
+-----------
+- 1 <= len(nums) <= 10^5
+- -10^6 <= nums[i] <= 10^6
+- Every element appears twice except one
+
+EXAMPLES
+--------
+Input:
+  4 1 2 1 2
+Output:
+  Sort: 4
+  Hash: 4
+  XOR:  4
+
+Input:
+  2 2 1
+Output:
+  Sort: 1
+  Hash: 1
+  XOR:  1
+
+INSTRUCTIONS
+------------
+Replace the `pass` in solve_sort(), solve_hash(), and solve_xor() with your solutions.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

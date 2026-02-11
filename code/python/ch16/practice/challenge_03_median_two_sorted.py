@@ -1,16 +1,44 @@
 """
-Solution for Challenge 3: Median of Two Sorted Arrays
-======================================================
-Chapter 16: Binary Search Beyond Arrays — Searching on Answers
+Challenge 3: Median of Two Sorted Arrays
+==========================================
+Chapter 16: Binary Search Beyond — When the Answer Is the Question
 
-APPROACH
+PROBLEM
+-------
+Given two sorted arrays, find the median of the combined sorted array.
+The overall run time should be O(log(min(m, n))).
+
+INPUT FORMAT
+------------
+Two lines, each containing space-separated integers (sorted arrays, may be empty).
+
+OUTPUT FORMAT
+-------------
+A float — the median value.
+
+CONSTRAINTS
+-----------
+- 0 <= len(nums1), len(nums2) <= 10^5
+- len(nums1) + len(nums2) >= 1
+- -10^6 <= nums1[i], nums2[i] <= 10^6
+- Both arrays are sorted
+
+EXAMPLES
 --------
-Binary search on the partition point of the shorter array. Partition both
-arrays so left halves contain exactly half the total elements. Check that
-max(left) <= min(right) to find the correct partition.
+Input:
+  1 3
+  2
+Output: 2.0
 
-TIME COMPLEXITY:  O(log(min(m, n)))
-SPACE COMPLEXITY: O(1)
+Input:
+  1 2
+  3 4
+Output: 2.5
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

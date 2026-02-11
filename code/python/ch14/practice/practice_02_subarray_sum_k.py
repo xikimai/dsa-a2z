@@ -1,16 +1,44 @@
 """
-Solution for Practice 2: Subarray Sum Equals K (Count)
-=======================================================
-Chapter 14: Prefix Sums — The Running Total Trick
+Practice 2: Subarray Sum Equals K (Count)
+==========================================
+Chapter 14: Prefix Sums — The Power of Pre-computation
 
-APPROACH
+PROBLEM
+-------
+Given an array of integers and an integer k, return the total number
+of contiguous subarrays whose sum equals k.
+
+INPUT FORMAT
+------------
+First line: space-separated integers (the array).
+Second line: a single integer k.
+
+OUTPUT FORMAT
+-------------
+A single integer — the count of subarrays with sum equal to k.
+
+CONSTRAINTS
+-----------
+- 1 <= len(arr) <= 10^5
+- -10^6 <= arr[i] <= 10^6
+- -10^9 <= k <= 10^9
+
+EXAMPLES
 --------
-Prefix sum + hash map. Maintain running sum and a map of
-{prefix_sum: count}. For each position, check how many
-previous prefix sums equal current_sum - k.
+Input:
+  1 1 1
+  2
+Output: 2
 
-TIME COMPLEXITY:  O(n)
-SPACE COMPLEXITY: O(n) — hash map
+Input:
+  1 2 3
+  3
+Output: 2
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

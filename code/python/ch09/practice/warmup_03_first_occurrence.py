@@ -1,33 +1,51 @@
 """
-Solution for Warmup 3: First Occurrence
-============================================
+Warmup 3: First Occurrence
+==============================
 Chapter 9: Finding Needles — The Power of Searching
 
-APPROACH
---------
-Modified binary search. When we find the target, we DON'T stop.
-Instead, we save the index as a candidate answer and continue searching
-LEFT (hi = mid - 1) to see if there's an earlier occurrence.
+PROBLEM
+-------
+Given a sorted array of integers (which may contain duplicates) and a
+target value, find the index of the FIRST occurrence of the target.
+If the target is not present, return -1.
 
-TIME COMPLEXITY:  O(log n) — always halves the search space
-SPACE COMPLEXITY: O(1)
+INPUT FORMAT
+------------
+First line: space-separated integers (a sorted array).
+Second line: a single integer (the target).
+
+OUTPUT FORMAT
+-------------
+A single integer: the index of the first occurrence, or -1 if not found.
+
+CONSTRAINTS
+-----------
+- 0 <= len(arr) <= 10^5
+- -10^9 <= arr[i] <= 10^9
+- The array is sorted in non-decreasing order.
+
+EXAMPLES
+--------
+Input:
+  1 2 2 2 3 4
+  2
+Output: 1
+
+Input:
+  1 3 5 7
+  4
+Output: -1
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 
 def solve(arr: list[int], target: int) -> int:
     """Return the index of the first occurrence of target, or -1."""
-    lo, hi = 0, len(arr) - 1
-    result = -1
-    while lo <= hi:
-        mid = lo + (hi - lo) // 2
-        if arr[mid] == target:
-            result = mid
-            hi = mid - 1  # keep searching left
-        elif arr[mid] < target:
-            lo = mid + 1
-        else:
-            hi = mid - 1
-    return result
+    pass  # TODO: Replace this with your solution
 
 
 # ── Do not change anything below this line ──────────────────────────

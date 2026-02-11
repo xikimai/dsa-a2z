@@ -63,6 +63,14 @@ jobs:
           fi
           echo "All GitBook tags balanced"
 
+      - name: Check practice files have no solution headers
+        run: |
+          if grep -rl "^Solution for " code/python/*/practice/*.py 2>/dev/null; then
+            echo "ERROR: Practice files contain solution headers"
+            exit 1
+          fi
+          echo "No solution headers in practice files"
+
       - name: Lint markdown
         uses: DavidAnson/markdownlint-cli2-action@v19
         continue-on-error: true

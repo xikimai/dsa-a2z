@@ -1,15 +1,39 @@
 """
-Solution for Warmup 1: Binary Representation
-==============================================
+Warmup 1: Binary Representation
+=================================
 Chapter 12: Bit Manipulation — The Language of Computers
 
-APPROACH
---------
-Repeatedly divide n by 2, collecting remainders.
-The remainders (read in reverse) form the binary string.
+PROBLEM
+-------
+Given a non-negative integer n, return its binary representation as a
+string without using any built-in conversion functions.
 
-TIME COMPLEXITY:  O(log n) — number of bits in n
-SPACE COMPLEXITY: O(log n) — for the result string
+INPUT FORMAT
+------------
+A single non-negative integer n.
+
+OUTPUT FORMAT
+-------------
+A string of '0's and '1's representing the binary form of n.
+
+CONSTRAINTS
+-----------
+- 0 <= n <= 10^9
+
+EXAMPLES
+--------
+Input:
+  5
+Output: 101
+
+Input:
+  42
+Output: 101010
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

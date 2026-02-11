@@ -1,18 +1,39 @@
 """
-Solution for Warmup 4: Count Binary Strings
-============================================
-Chapter 13: Bronze Battle Plan — Complete Search & Simulation
+Warmup 4: Count Binary Strings
+================================
+Chapter 13: Bronze Battle Plan — Putting It All Together
 
-APPROACH
+PROBLEM
+-------
+Given a positive integer n, count the number of binary strings of
+length n that do not contain consecutive 1s.
+
+INPUT FORMAT
+------------
+A single positive integer n.
+
+OUTPUT FORMAT
+-------------
+A single integer — the count of valid binary strings.
+
+CONSTRAINTS
+-----------
+- 1 <= n <= 30
+
+EXAMPLES
 --------
-DP / Fibonacci-like recurrence:
-  ending_in_0[i] = ending_in_0[i-1] + ending_in_1[i-1]
-  ending_in_1[i] = ending_in_0[i-1]  (can't have consecutive 1s)
-Total = ending_in_0[n] + ending_in_1[n]
-This is the (n+2)-th Fibonacci number.
+Input:
+  3
+Output: 5
 
-TIME COMPLEXITY:  O(n)
-SPACE COMPLEXITY: O(1)
+Input:
+  2
+Output: 3
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

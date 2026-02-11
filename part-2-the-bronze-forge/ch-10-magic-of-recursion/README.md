@@ -671,6 +671,41 @@ void backtrackPerm(vector<int>& nums, int start,
 
 ---
 
+## Five-Lens Framework: Fibonacci Numbers
+
+Let us apply the Five-Lens Framework to the Fibonacci problem: compute F(n) where F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2).
+
+### Lens 1: Constraints
+
+We might need to compute F(n) for n up to 10^6 or even larger. F(50) is already over 12 billion, so we also need to think about integer overflow in Java/C++. The time limit means we need at least O(n) -- anything exponential is out of the question.
+
+### Lens 2: Brute Force
+
+The most natural approach is naive recursion: `fib(n) = fib(n-1) + fib(n-2)`. But this creates a binary recursion tree with massive redundancy. `fib(5)` computes `fib(3)` twice, `fib(2)` three times. The total number of calls is O(2^n), which means `fib(50)` makes over a trillion calls. Way too slow.
+
+### Lens 3: Pattern
+
+The key insight is **overlapping subproblems**: the same Fibonacci values are computed over and over again. If we save (memoize) each result the first time we compute it, we never recompute anything. This turns the exponential tree into a linear chain -- each F(k) is computed exactly once.
+
+### Lens 4: Optimization
+
+With memoization, we get O(n) time and O(n) space. But we can do even better: since F(n) only depends on the previous two values, we can use a simple loop with two variables. That gives O(n) time and O(1) space -- no recursion, no extra memory, just two variables sliding forward.
+
+### Lens 5: Proof
+
+We prove the iterative solution is correct by induction. Base case: we initialize a = F(0) = 0 and b = F(1) = 1. Inductive step: at each iteration, the loop invariant says a = F(i-2) and b = F(i-1). We compute temp = a + b = F(i-2) + F(i-1) = F(i) by definition. After updating, a = F(i-1) and b = F(i), maintaining the invariant. After n-1 iterations, b = F(n).
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Thinking Flowchart: Should I Use Recursion?
 
 ```mermaid

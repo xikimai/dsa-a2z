@@ -721,6 +721,41 @@ This is the "reduce to a known problem" thread in action. Once you see the graph
 
 ---
 
+## Five-Lens Framework: Connected Components
+
+Let us apply the Five-Lens Framework to the Connected Components problem. Given an undirected graph with n vertices and m edges, count how many separate groups (connected components) exist.
+
+### Lens 1: Constraints
+
+The graph can have up to 100,000 vertices and 200,000 edges. We need to figure out how many "islands" of connected vertices there are. We need an approach that scales linearly with the graph size.
+
+### Lens 2: Brute Force
+
+For every pair of vertices, check if there is a path between them (using BFS or DFS). Group vertices that can reach each other. This is O(V^2 * (V + E)) in the worst case -- way too slow for large graphs.
+
+### Lens 3: Pattern
+
+This fits the "graph traversal" pattern. The key insight: when you run BFS or DFS from any vertex, it visits every vertex reachable from that starting point -- that is exactly one connected component. If you loop through all vertices and start a new traversal whenever you find an unvisited vertex, each new traversal discovers a new component.
+
+### Lens 4: Optimization
+
+Loop through vertices 0 to n-1. For each unvisited vertex, run BFS (or DFS) to mark all reachable vertices as visited, and increment the component count. Each vertex is visited exactly once and each edge is checked exactly once across all traversals. Total: O(V + E) time, O(V) space for the visited array. This is optimal -- you cannot do better than reading the entire graph.
+
+### Lens 5: Proof
+
+Here is why this counts every component exactly once. Each vertex belongs to exactly one connected component (by definition). The first time we encounter an unvisited vertex, it must belong to a component we have not seen yet (otherwise it would already be marked visited from a previous traversal). BFS/DFS then visits ALL vertices in that component (because it follows every reachable edge). So each component triggers exactly one new traversal, and the count is correct.
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Decision Flowchart
 
 When facing a graph problem, use this guide:

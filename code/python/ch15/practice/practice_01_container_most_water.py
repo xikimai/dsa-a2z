@@ -1,15 +1,41 @@
 """
-Solution for Practice 1: Container With Most Water
-====================================================
-Chapter 15: Two Pointers & Sliding Window — The Caterpillar Method
+Practice 1: Container With Most Water
+=======================================
+Chapter 15: Two Pointers & Sliding Window — The Dance of Indices
 
-APPROACH
+PROBLEM
+-------
+Given an array of non-negative integers where each element represents
+the height of a vertical line, find two lines that together with the
+x-axis form a container holding the most water. Return the maximum area.
+
+INPUT FORMAT
+------------
+A single line of space-separated non-negative integers.
+
+OUTPUT FORMAT
+-------------
+A single integer — the maximum water area.
+
+CONSTRAINTS
+-----------
+- 2 <= len(heights) <= 10^5
+- 0 <= heights[i] <= 10^4
+
+EXAMPLES
 --------
-Converging two pointers. Start with widest container, move the
-shorter side inward (only way to potentially increase area).
+Input:
+  1 8 6 2 5 4 8 3 7
+Output: 49
 
-TIME COMPLEXITY:  O(n) — single pass
-SPACE COMPLEXITY: O(1) — constant extra space
+Input:
+  1 1
+Output: 1
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

@@ -1,14 +1,43 @@
 """
-Solution for Warmup 4: Is Array Prefix of Another
-===================================================
-Chapter 14: Prefix Sums — The Running Total Trick
+Warmup 4: Is Array Prefix of Another
+======================================
+Chapter 14: Prefix Sums — The Power of Pre-computation
 
-APPROACH
+PROBLEM
+-------
+Given two arrays arr1 and arr2, determine if arr1 is a prefix of arr2.
+An array is a prefix if it matches the beginning of the other array
+element by element. An empty array is a prefix of any array.
+
+INPUT FORMAT
+------------
+Two lines, each containing space-separated integers.
+
+OUTPUT FORMAT
+-------------
+True or False.
+
+CONSTRAINTS
+-----------
+- 0 <= len(arr1), len(arr2) <= 10^5
+- -10^6 <= elements <= 10^6
+
+EXAMPLES
 --------
-Check length constraint, then compare element by element.
+Input:
+  1 2 3
+  1 2 3 4 5
+Output: True
 
-TIME COMPLEXITY:  O(min(n, m))
-SPACE COMPLEXITY: O(1)
+Input:
+  1 2 4
+  1 2 3 4 5
+Output: False
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

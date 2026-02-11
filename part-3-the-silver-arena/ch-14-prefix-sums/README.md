@@ -648,6 +648,41 @@ long long kadane(vector<int>& arr) {
 
 ---
 
+## Five-Lens Framework: Range Sum Query
+
+Let us apply the Five-Lens Framework to the Range Sum Query problem. You have an array of numbers and need to answer many queries like "what is the sum from index l to index r?"
+
+### Lens 1: Constraints
+
+The array can have up to 100,000 elements, and there can be up to 100,000 queries. Each query asks for the sum of a contiguous range. That means an O(n) brute force per query would give 100,000 * 100,000 = 10 billion operations -- way too slow.
+
+### Lens 2: Brute Force
+
+The simplest approach: for each query, loop from l to r and add up the elements. This is O(n) per query and O(q * n) total. With large n and q, we need something faster.
+
+### Lens 3: Pattern
+
+This fits the "precompute once, query many times" pattern. If we store a running total (prefix sum) where `prefix[i]` is the sum of all elements before index i, then any range sum becomes a single subtraction: `prefix[r+1] - prefix[l]`. We are trading preprocessing time for instant queries.
+
+### Lens 4: Optimization
+
+Build the prefix sum array in O(n) time and O(n) space. After that, every range sum query is O(1) -- just one subtraction. Total cost: O(n) preprocessing + O(1) per query, which handles 100,000 queries on a 100,000-element array with ease.
+
+### Lens 5: Proof
+
+Here is why this always works. `prefix[r+1]` stores the sum of elements from index 0 through r. `prefix[l]` stores the sum from index 0 through l-1. When we subtract, the elements before index l cancel out, leaving exactly the sum from l to r. This is a direct proof -- the formula follows straight from how we defined the prefix array.
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Flowcharts
 
 ### Thinking Flowchart: "Is This a Prefix Sum Problem?"

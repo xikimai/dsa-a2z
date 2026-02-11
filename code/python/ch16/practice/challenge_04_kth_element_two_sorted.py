@@ -1,15 +1,48 @@
 """
-Solution for Challenge 4: Kth Element of Two Sorted Arrays
-===========================================================
-Chapter 16: Binary Search Beyond Arrays — Searching on Answers
+Challenge 4: Kth Element of Two Sorted Arrays
+===============================================
+Chapter 16: Binary Search Beyond — When the Answer Is the Question
 
-APPROACH
+PROBLEM
+-------
+Given two sorted arrays and an integer k (1-indexed), find the kth
+smallest element in the combined sorted order.
+
+INPUT FORMAT
+------------
+First line: space-separated integers (first sorted array, may be empty).
+Second line: space-separated integers (second sorted array, may be empty).
+Third line: a single integer k.
+
+OUTPUT FORMAT
+-------------
+A single integer — the kth smallest element.
+
+CONSTRAINTS
+-----------
+- 0 <= len(nums1), len(nums2) <= 10^5
+- 1 <= k <= len(nums1) + len(nums2)
+- -10^6 <= nums1[i], nums2[i] <= 10^6
+- Both arrays are sorted
+
+EXAMPLES
 --------
-Binary search on how many elements to take from the first array.
-If we take i from nums1, we take k-i from nums2. Check partition validity.
+Input:
+  2 3 6 7 9
+  1 4 8 10
+  5
+Output: 6
 
-TIME COMPLEXITY:  O(log(min(m, n, k)))
-SPACE COMPLEXITY: O(1)
+Input:
+  1 3 5
+  2 4 6
+  1
+Output: 1
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

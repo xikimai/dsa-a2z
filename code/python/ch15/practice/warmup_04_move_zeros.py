@@ -1,15 +1,40 @@
 """
-Solution for Warmup 4: Move Zeros to End
-==========================================
-Chapter 15: Two Pointers & Sliding Window — The Caterpillar Method
+Warmup 4: Move Zeros to End
+==============================
+Chapter 15: Two Pointers & Sliding Window — The Dance of Indices
 
-APPROACH
+PROBLEM
+-------
+Given an array of integers, move all zeros to the end while maintaining
+the relative order of the non-zero elements.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers (may be empty).
+
+OUTPUT FORMAT
+-------------
+The modified array as a list.
+
+CONSTRAINTS
+-----------
+- 0 <= len(arr) <= 10^5
+- -10^6 <= arr[i] <= 10^6
+
+EXAMPLES
 --------
-Use a slow pointer for the write position. Fast pointer scans.
-When a non-zero is found, swap it with slow and advance slow.
+Input:
+  0 1 0 3 12
+Output: [1, 3, 12, 0, 0]
 
-TIME COMPLEXITY:  O(n) — single pass
-SPACE COMPLEXITY: O(1) — in-place swaps
+Input:
+  0 0 1
+Output: [1, 0, 0]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

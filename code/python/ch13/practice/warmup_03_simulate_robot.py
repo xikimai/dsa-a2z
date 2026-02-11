@@ -1,14 +1,41 @@
 """
-Solution for Warmup 3: Simulate Robot Moves
-============================================
-Chapter 13: Bronze Battle Plan — Complete Search & Simulation
+Warmup 3: Simulate Robot Moves
+================================
+Chapter 13: Bronze Battle Plan — Putting It All Together
 
-APPROACH
+PROBLEM
+-------
+A robot starts at position (0, 0) on a 2D grid. Given a string of
+commands ('U' = up, 'D' = down, 'L' = left, 'R' = right), return
+the robot's final [x, y] position.
+
+INPUT FORMAT
+------------
+A single string of characters from {U, D, L, R}.
+
+OUTPUT FORMAT
+-------------
+A list [x, y] representing the final position.
+
+CONSTRAINTS
+-----------
+- 0 <= len(commands) <= 10^4
+- Each character is one of 'U', 'D', 'L', 'R'
+
+EXAMPLES
 --------
-Walk through each command and update (x, y).
+Input:
+  RRRUUU
+Output: [3, 3]
 
-TIME COMPLEXITY:  O(n) where n = len(commands)
-SPACE COMPLEXITY: O(1)
+Input:
+  UUDDLR
+Output: [0, 0]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

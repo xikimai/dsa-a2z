@@ -725,6 +725,41 @@ pair<int,int> jobSequencing(vector<vector<int>>& jobs) {
 
 ---
 
+## Five-Lens Framework: Activity Selection
+
+Let us apply the Five-Lens Framework to the Activity Selection problem. Given n activities with start and end times, select the maximum number of activities that do not overlap (a room can only hold one event at a time).
+
+### Lens 1: Constraints
+
+There can be up to 100,000 activities, each with a start and end time. We want to maximize the COUNT of non-overlapping activities. An O(2^n) approach is out of the question, so we need something polynomial.
+
+### Lens 2: Brute Force
+
+Try every possible subset of activities (2^n subsets). For each subset, check if all activities are compatible (no overlaps). Track the largest valid subset. This is O(2^n * n) -- completely impractical for n beyond about 20.
+
+### Lens 3: Pattern
+
+This fits the "greedy with sorting" pattern. The key insight: the activity that finishes earliest leaves the most room for future activities. So if we sort by end time and always pick the next activity that does not conflict with our last pick, we greedily maximize the number of activities.
+
+### Lens 4: Optimization
+
+Sort activities by end time in O(n log n). Then make a single pass: for each activity, if it starts at or after the end of the last selected activity, select it. Total: O(n log n) for sorting + O(n) for the scan = O(n log n). Space: O(1) extra beyond the input.
+
+### Lens 5: Proof
+
+Here is why greedy is correct, using the exchange argument. Suppose someone has a solution that picks different activities than ours. Look at the first place they differ. Their activity ends at the same time or later than our greedy pick (because we picked the earliest-ending one). We can swap their pick for ours without creating conflicts, because our pick ends no later. After swapping, their solution is still valid and has the same size. Repeating this for every difference shows that greedy matches any optimal solution.
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Decision Flowchart: When Does Greedy Work?
 
 ```mermaid

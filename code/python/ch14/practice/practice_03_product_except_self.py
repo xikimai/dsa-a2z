@@ -1,17 +1,42 @@
 """
-Solution for Practice 3: Product of Array Except Self
-======================================================
-Chapter 14: Prefix Sums — The Running Total Trick
+Practice 3: Product of Array Except Self
+==========================================
+Chapter 14: Prefix Sums — The Power of Pre-computation
 
-APPROACH
+PROBLEM
+-------
+Given an integer array, return an array where each element is the product
+of all elements except the one at that index. You must solve it without
+using division.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers.
+
+OUTPUT FORMAT
+-------------
+The result array as a list.
+
+CONSTRAINTS
+-----------
+- 2 <= len(arr) <= 10^5
+- -30 <= arr[i] <= 30
+- The product of any prefix or suffix fits in a 32-bit integer
+
+EXAMPLES
 --------
-Two-pass approach without division:
-  1. Build left_products: left_products[i] = product of arr[0..i-1]
-  2. Build right_products: right_products[i] = product of arr[i+1..n-1]
-  3. result[i] = left_products[i] * right_products[i]
+Input:
+  1 2 3 4
+Output: [24, 12, 8, 6]
 
-TIME COMPLEXITY:  O(n)
-SPACE COMPLEXITY: O(n) — output array (can optimize to O(1) extra)
+Input:
+  -1 1 0 -3 3
+Output: [0, 0, 9, 0, 0]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

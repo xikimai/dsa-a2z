@@ -1,15 +1,45 @@
 """
-Solution for Practice 2: Ship Packages Within D Days
-=====================================================
-Chapter 16: Binary Search Beyond Arrays — Searching on Answers
+Practice 2: Ship Packages Within D Days
+=========================================
+Chapter 16: Binary Search Beyond — When the Answer Is the Question
 
-APPROACH
+PROBLEM
+-------
+Packages on a conveyor belt must be shipped in order within d days. Each
+day you load packages sequentially until the next package would exceed the
+ship capacity. Find the minimum ship capacity to ship all packages in d days.
+
+INPUT FORMAT
+------------
+First line: space-separated integers (package weights).
+Second line: a single integer d (number of days).
+
+OUTPUT FORMAT
+-------------
+A single integer — the minimum ship capacity.
+
+CONSTRAINTS
+-----------
+- 1 <= len(weights) <= 5 * 10^4
+- 1 <= weights[i] <= 500
+- 1 <= d <= len(weights)
+
+EXAMPLES
 --------
-Binary search on answer space [max(weights), sum(weights)]. For each
-candidate capacity, greedily load packages and count days needed.
+Input:
+  1 2 3 4 5 6 7 8 9 10
+  5
+Output: 15
 
-TIME COMPLEXITY:  O(n * log(sum(weights)))
-SPACE COMPLEXITY: O(1)
+Input:
+  3 2 2 4 1 4
+  3
+Output: 6
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

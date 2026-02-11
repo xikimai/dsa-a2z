@@ -1,14 +1,51 @@
 """
-Solution for Warmup 2: Range Sum Query
-========================================
-Chapter 14: Prefix Sums — The Running Total Trick
+Warmup 2: Range Sum Query
+============================
+Chapter 14: Prefix Sums — The Power of Pre-computation
 
-APPROACH
+PROBLEM
+-------
+Given an array and multiple queries, each specifying a range [l, r]
+(0-indexed, inclusive), return the sum of elements from index l to r
+for each query.
+
+INPUT FORMAT
+------------
+First line: space-separated integers (the array).
+Second line: integer q (number of queries).
+Next q lines: two integers l and r per line.
+
+OUTPUT FORMAT
+-------------
+A list of range sums.
+
+CONSTRAINTS
+-----------
+- 1 <= len(arr) <= 10^5
+- 0 <= l <= r < len(arr)
+- 1 <= q <= 10^5
+
+EXAMPLES
 --------
-Build prefix sum once, answer each query with prefix[r+1] - prefix[l].
+Input:
+  3 1 4 1 5 9
+  2
+  0 5
+  2 4
+Output: [23, 10]
 
-TIME COMPLEXITY:  O(n + q) — n to build prefix, O(1) per query
-SPACE COMPLEXITY: O(n) — prefix array
+Input:
+  10 20 30
+  3
+  0 0
+  1 1
+  2 2
+Output: [10, 20, 30]
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

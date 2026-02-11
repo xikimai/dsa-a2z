@@ -854,6 +854,41 @@ vector<int> topKFrequent(vector<int>& nums, int k) {
 
 ---
 
+## Five-Lens Framework: Kth Largest Element
+
+Let us apply the Five-Lens Framework to the Kth Largest Element problem. Given an unsorted array of n numbers and an integer k, find the kth largest element.
+
+### Lens 1: Constraints
+
+The array can have up to 100,000 elements, and k is between 1 and n. We need to find one specific element by rank, not sort the entire array. Any solution faster than full sorting would be a win.
+
+### Lens 2: Brute Force
+
+The simplest approach: sort the entire array in descending order and return the element at index k-1. This takes O(n log n) time. It works, but we are doing more work than necessary -- we sort ALL elements when we only need one.
+
+### Lens 3: Pattern
+
+This fits the "partial order" pattern. We do not need the full sorted order -- we just need to know which element is kth largest. A min-heap of size k acts like a "VIP list" that only keeps the top k elements. The smallest element in this VIP list is exactly the kth largest overall.
+
+### Lens 4: Optimization
+
+Maintain a min-heap of size k. Push each element onto the heap, and whenever the heap exceeds size k, pop the smallest. After processing all elements, the heap's minimum is the answer. Time: O(n log k). When k is much smaller than n, this is significantly faster than O(n log n). Space: O(k).
+
+### Lens 5: Proof
+
+Here is why the heap approach is correct. After processing all n elements, the heap contains exactly the k largest elements (because every time an element smaller than the current kth largest entered, it was immediately removed). The minimum of these k elements is, by definition, the kth largest. We never lose a "top k" element because we only pop when a bigger element pushes it out.
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Decision Flowchart: When to Use a Heap
 
 ```mermaid

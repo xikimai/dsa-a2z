@@ -1,15 +1,41 @@
 """
-Solution for Challenge 2: Trapping Rain Water
-===============================================
-Chapter 15: Two Pointers & Sliding Window — The Caterpillar Method
+Challenge 2: Trapping Rain Water
+==================================
+Chapter 15: Two Pointers & Sliding Window — The Dance of Indices
 
-APPROACH
+PROBLEM
+-------
+Given an array of non-negative integers representing an elevation map
+where the width of each bar is 1, compute how much water can be trapped
+after raining.
+
+INPUT FORMAT
+------------
+A single line of space-separated non-negative integers (may be empty).
+
+OUTPUT FORMAT
+-------------
+A single integer — the total units of trapped water.
+
+CONSTRAINTS
+-----------
+- 0 <= len(heights) <= 10^5
+- 0 <= heights[i] <= 10^4
+
+EXAMPLES
 --------
-Two pointers from both ends. Track left_max and right_max.
-Process the side with the smaller max — water level there is known.
+Input:
+  0 1 0 2 1 0 1 3 2 1 2 1
+Output: 6
 
-TIME COMPLEXITY:  O(n) — single pass
-SPACE COMPLEXITY: O(1) — constant extra space
+Input:
+  4 2 0 3 2 5
+Output: 9
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

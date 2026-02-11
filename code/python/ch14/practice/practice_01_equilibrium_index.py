@@ -1,15 +1,41 @@
 """
-Solution for Practice 1: Equilibrium Index
-============================================
-Chapter 14: Prefix Sums — The Running Total Trick
+Practice 1: Equilibrium Index
+===============================
+Chapter 14: Prefix Sums — The Power of Pre-computation
 
-APPROACH
+PROBLEM
+-------
+Given an array of integers, find the first equilibrium index. An index i
+is an equilibrium index if the sum of elements to the left of i equals
+the sum of elements to the right of i. Return -1 if no such index exists.
+
+INPUT FORMAT
+------------
+A single line of space-separated integers.
+
+OUTPUT FORMAT
+-------------
+A single integer — the first equilibrium index, or -1.
+
+CONSTRAINTS
+-----------
+- 1 <= len(arr) <= 10^5
+- -10^6 <= arr[i] <= 10^6
+
+EXAMPLES
 --------
-Build prefix sum. For each index i, left_sum = prefix[i],
-right_sum = prefix[n] - prefix[i+1]. Return first i where they match.
+Input:
+  -7 1 5 2 -4 3 0
+Output: 3
 
-TIME COMPLEXITY:  O(n)
-SPACE COMPLEXITY: O(n) — prefix array
+Input:
+  1 2 3
+Output: -1
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

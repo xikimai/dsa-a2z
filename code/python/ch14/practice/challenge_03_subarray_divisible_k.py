@@ -1,16 +1,44 @@
 """
-Solution for Challenge 3: Subarray Sum Divisible by K
-======================================================
-Chapter 14: Prefix Sums — The Running Total Trick
+Challenge 3: Subarray Sum Divisible by K
+==========================================
+Chapter 14: Prefix Sums — The Power of Pre-computation
 
-APPROACH
+PROBLEM
+-------
+Given an integer array and an integer k, return the number of contiguous
+subarrays whose sum is divisible by k.
+
+INPUT FORMAT
+------------
+First line: space-separated integers (the array).
+Second line: a single integer k.
+
+OUTPUT FORMAT
+-------------
+A single integer — the count of subarrays with sum divisible by k.
+
+CONSTRAINTS
+-----------
+- 1 <= len(arr) <= 10^5
+- -10^6 <= arr[i] <= 10^6
+- 2 <= k <= 10^4
+
+EXAMPLES
 --------
-Use prefix sums modulo k. Two prefix sums with the same remainder
-mean the subarray between them has sum divisible by k.
-Count remainders and use c*(c-1)/2 formula for pairs.
+Input:
+  4 5 0 -2 -3 1
+  5
+Output: 7
 
-TIME COMPLEXITY:  O(n)
-SPACE COMPLEXITY: O(min(n, k)) — remainder counts
+Input:
+  5 10 15
+  5
+Output: 6
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

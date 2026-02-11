@@ -1,14 +1,53 @@
 """
-Solution for Practice 4: Letter Combinations of a Phone Number
-============================================
-Chapter 13: Bronze Battle Plan — Complete Search & Simulation
+Practice 4: Letter Combinations of a Phone Number
+===================================================
+Chapter 13: Bronze Battle Plan — Putting It All Together
 
-APPROACH
+PROBLEM
+-------
+Given a string of digits (2-9), return all possible letter combinations
+that the digits could represent on a phone keypad. Mapping:
+2=abc, 3=def, 4=ghi, 5=jkl, 6=mno, 7=pqrs, 8=tuv, 9=wxyz.
+
+INPUT FORMAT
+------------
+A single string of digits (2-9). May be empty.
+
+OUTPUT FORMAT
+-------------
+Each combination on its own line. Empty list if input is empty.
+
+CONSTRAINTS
+-----------
+- 0 <= len(digits) <= 4
+- Each character is a digit from '2' to '9'
+
+EXAMPLES
 --------
-Backtrack: for each digit, try all its mapped letters and recurse.
+Input:
+  23
+Output:
+  ad
+  ae
+  af
+  bd
+  be
+  bf
+  cd
+  ce
+  cf
 
-TIME COMPLEXITY:  O(4^n) — each digit maps to at most 4 letters
-SPACE COMPLEXITY: O(n) — recursion depth
+Input:
+  2
+Output:
+  a
+  b
+  c
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 

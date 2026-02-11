@@ -717,6 +717,41 @@ vector<vector<int>> primeFactors(int n) {
 
 ---
 
+## Five-Lens Framework: GCD (Euclidean Algorithm)
+
+Let us apply the Five-Lens Framework to the GCD problem, one of the most fundamental algorithms in number theory.
+
+### Lens 1: Constraints
+
+We need to find the greatest common divisor of two integers a and b, where values can be up to 10^18. This means any algorithm that checks every number from 1 to min(a, b) is way too slow. We need something that runs in O(log n) or better.
+
+### Lens 2: Brute Force
+
+The simplest approach: try every number from 1 to min(a, b) and check if it divides both. That is O(min(a, b)) time. For a = 10^18, that is a billion billion steps. Completely infeasible.
+
+### Lens 3: Pattern
+
+The key insight is that GCD(a, b) = GCD(b, a % b). When you take the remainder, the numbers shrink rapidly. Each step reduces the larger number by at least half, which means the number of steps is logarithmic. This is the Euclidean algorithm -- replace the larger number with the remainder until one becomes zero.
+
+### Lens 4: Optimization
+
+The Euclidean algorithm runs in O(log(min(a, b))) time and O(1) space. For two billion-scale numbers, that is about 60 steps. You cannot do better than this for computing GCD -- it is essentially optimal. The extended version also finds x and y such that a*x + b*y = GCD(a, b) with no additional time cost.
+
+### Lens 5: Proof
+
+Here is why GCD(a, b) = GCD(b, a % b) is always correct. Suppose d divides both a and b. Then d also divides a - q*b (where q = a // b), which equals a % b. So every common divisor of a and b is also a common divisor of b and a % b. The same argument works in reverse. This means the two pairs have exactly the same set of common divisors, so they have the same GREATEST common divisor.
+
+```mermaid
+flowchart TD
+    A["Problem"] --> B["Lens 1: Constraints"]
+    B --> C["Lens 2: Brute Force"]
+    C --> D["Lens 3: Pattern"]
+    D --> E["Lens 4: Optimize"]
+    E --> F["Lens 5: Proof"]
+```
+
+---
+
 ## Thinking Flowchart
 
 When you encounter a math/number theory problem, ask yourself:

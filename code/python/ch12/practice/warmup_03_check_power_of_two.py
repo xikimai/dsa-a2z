@@ -1,15 +1,39 @@
 """
-Solution for Warmup 3: Check Power of Two
-==========================================
+Warmup 3: Check Power of Two
+==============================
 Chapter 12: Bit Manipulation — The Language of Computers
 
-APPROACH
---------
-A power of 2 has exactly one set bit. n & (n - 1) clears the lowest
-set bit. If the result is 0 and n > 0, then n is a power of 2.
+PROBLEM
+-------
+Given an integer n, determine whether it is a power of two. Return
+True if it is, False otherwise.
 
-TIME COMPLEXITY:  O(1)
-SPACE COMPLEXITY: O(1)
+INPUT FORMAT
+------------
+A single integer n.
+
+OUTPUT FORMAT
+-------------
+True or False.
+
+CONSTRAINTS
+-----------
+- -10^9 <= n <= 10^9
+
+EXAMPLES
+--------
+Input:
+  16
+Output: True
+
+Input:
+  6
+Output: False
+
+INSTRUCTIONS
+------------
+Replace the `pass` in the solve() function with your solution.
+The main block at the bottom handles input/output — don't change it.
 """
 
 
